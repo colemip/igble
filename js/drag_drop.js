@@ -35,7 +35,7 @@ igble.proj.dragDrop = {
 		console.log(words);
 		for(var i=0; i < words.length; i++) {
 			var word = words[i];
-			var $draggableWord = $("<div class='.igble-proj-draggable'></div>");
+			var $draggableWord = $("<div class='igble-proj-draggable igble-proj-token'></div>");
 			$draggableWord.append(word);
 			igble.proj.dragDrop.makeDraggable($draggableWord);
 			$('main').append($draggableWord);
