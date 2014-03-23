@@ -4,7 +4,7 @@ if(!window.igble.proj.dragDrop) { window.igble.proj.dragDrop = {}; }
 
 igble.proj.dragDrop = {
 	init: function() {
-		igble.proj.dragDrop.splitIntoDraggables("This is a sentence");
+		// igble.proj.dragDrop.splitIntoDraggables("This is a sentence");
 		
 		$('.igble-proj-draggable').draggable({
 			revert: true

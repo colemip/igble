@@ -1,9 +1,22 @@
 /**
  *   Stylesheet for drag and drop elements
  */
+body {
+  margin: 0 auto;
+  text-align: left;
+  width: 90%;
+}
+
 .igble-proj-token {
   border: solid 1px #f9f9f9;
   padding: 0.9em 1.0em 0.5em 1.0em;
   height: 2.0em;
   width: 5.0em;
+}
+
+.igble-proj-adjective {
+  transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
 }
