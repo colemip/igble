@@ -14,9 +14,22 @@ body {
   width: 5.0em;
 }
 
-.igble-proj-adjective {
+.iglbe-proj-noun-group {
+  width: 50%;
+  height: 5.0em;
+  position: relative;
+  border: solid 1px #c9c9c9;
+}
+.iglbe-proj-noun-group .igble-proj-noun {
+  border: solid 1px #f9f9f9;
+}
+.iglbe-proj-noun-group .igble-proj-noun-adjective {
+  width: 50%;
+  position: absolute;
   transform: rotate(30deg);
   -webkit-transform: rotate(30deg);
   -moz-transform: rotate(30deg);
   -ms-transform: rotate(30deg);
+  border-bottom: solid 2px #090909;
+  top: 5.0em;
 }

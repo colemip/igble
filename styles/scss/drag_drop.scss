@@ -17,9 +17,27 @@ body {
   width: 5.0em;
 }
 
-.igble-proj-adjective {
-  transform: rotate($adj-rot);
-  -webkit-transform: rotate($adj-rot);
-  -moz-transform: rotate($adj-rot);
-  -ms-transform: rotate($adj-rot);
+.iglbe-proj-noun-group {
+  width: 50%;
+  height: 5.0em;;
+  position: relative;
+  border: solid 1px #c9c9c9;
+  
+  .igble-proj-noun {
+    border: solid 1px #f9f9f9;
+  }
+  
+  .igble-proj-noun-adjective {
+    width: 50%;
+    position: absolute;
+    transform: rotate($adj-rot);
+    -webkit-transform: rotate($adj-rot);
+    -moz-transform: rotate($adj-rot);
+    -ms-transform: rotate($adj-rot);
+    border-bottom: solid 2px #090909;
+    top: 5.0em;    
+  }
+
+  
 }
+
