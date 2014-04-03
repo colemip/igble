@@ -15,6 +15,7 @@ igble.proj.dragDrop = {
 				function(event, ui) {},
 						
 		});
+		$('#igble-proj-diagram-stage').droppable({});
 	},
 	
 	onDrag: function(element) {

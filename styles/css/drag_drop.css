@@ -33,3 +33,7 @@ body {
   border-bottom: solid 2px #090909;
   top: 5.0em;
 }
+
+#igble-proj-diagram-stage {
+  font-size: 5.0em;
+}
