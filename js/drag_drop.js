@@ -7,7 +7,7 @@ igble.proj.dragDrop = {
 		// igble.proj.dragDrop.splitIntoDraggables("This is a sentence");
 		
 		$('.igble-proj-draggable').draggable({
-			revert: true
+			revert: 'invalid'
 		});
 		$('.igble-proj-droppable').droppable({
 			accept: '.igble-proj-draggable', 
@@ -16,6 +16,21 @@ igble.proj.dragDrop = {
 						
 		});
 		$('#igble-proj-diagram-stage').droppable({});
+		
+		
+		
+		$('.igble-proj-draggable-token').draggable({
+			revert: 'invalid'
+		});
+		$('.igble-proj-droppable-token').droppable({
+			accept: '.igble-proj-draggable-token',
+			activate: function(event, ui) {
+				console.log(event);
+			},
+			drop: function(event, ui) {
+				console.log("dropped on!");
+			},
+		});
 	},
 	
 	onDrag: function(element) {
