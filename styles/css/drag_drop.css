@@ -45,6 +45,9 @@ body {
   padding: 0.75em 0.75em 0.1em 0.75em;
   min-width: 5.0em;
 }
+.igble-proj-droppable-token.dropped {
+  border: solid 2px #ff0000;
+}
 
 .igble-proj-draggable-token {
   border: solid 2px #AAAAAA;

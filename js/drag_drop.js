@@ -20,16 +20,19 @@ igble.proj.dragDrop = {
 		
 		
 		$('.igble-proj-draggable-token').draggable({
-			revert: 'invalid'
+			revert: 'invalid',			
 		});
 		$('.igble-proj-droppable-token').droppable({
 			accept: '.igble-proj-draggable-token',
-			activate: function(event, ui) {
-				console.log(event);
-			},
+			activate: function(event, ui) {},
+			deactivate: function(event, ui) {},
 			drop: function(event, ui) {
-				console.log("dropped on!");
+				$(this).text($(ui.draggable).text());
+				$(this).addClass('dropped');
+				$(ui.draggable).remove();
 			},
+			hoverClass: 'dropped',
+			tolerance: 'intersect'
 		});
 	},
 	
