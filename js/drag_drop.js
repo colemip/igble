@@ -30,6 +30,7 @@ igble.proj.dragDrop = {
 				$(this).text($(ui.draggable).text());
 				$(this).addClass('dropped');
 				$(ui.draggable).remove();
+				igble.proj.dragDrop.onDrop($(this));
 			},
 			hoverClass: 'dropped',
 			tolerance: 'intersect'
@@ -41,7 +42,7 @@ igble.proj.dragDrop = {
 	},
 	
 	onDrop: function(element) {
-		
+		console.log("dropped!");
 	},
 	
 	makeDraggable: function(element) {
