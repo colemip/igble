@@ -7,23 +7,23 @@ body {
   width: 90%;
 }
 
-.igble-proj-token {
+.token {
   border: solid 1px #f9f9f9;
   padding: 0.9em 1.0em 0.5em 1.0em;
   height: 2.0em;
   width: 5.0em;
 }
 
-.iglbe-proj-noun-group {
+.noun-group {
   width: 50%;
   height: 5.0em;
   position: relative;
   border: solid 1px #c9c9c9;
 }
-.iglbe-proj-noun-group .igble-proj-noun {
+.noun-group .noun {
   border: solid 1px #f9f9f9;
 }
-.iglbe-proj-noun-group .igble-proj-noun-adjective {
+.noun-group .noun-adjective {
   width: 50%;
   position: absolute;
   transform: rotate(30deg);
@@ -34,32 +34,36 @@ body {
   top: 5.0em;
 }
 
-#igble-proj-diagram-stage {
+#token-bank {
+  margin-bottom: 2.0em;
+}
+
+#diagram-stage {
   position: relative;
   border-bottom: solid 2px #0f0f0f;
   width: 90%;
   min-height: 5.0em;
 }
 
-#igble-proj-noun-verb-sep {
+#noun-verb-sep {
   font-size: 5.0em;
   position: absolute;
   top: 0.2em;
   left: 50%;
 }
 
-.igble-proj-droppable-token {
+.droppable-token {
   border: solid 2px #AAAAAA;
   height: 2.0em;
   display: inline-block;
   padding: 0.75em 0.75em 0.1em 0.75em;
   min-width: 5.0em;
 }
-.igble-proj-droppable-token.dropped {
+.droppable-token.dropped {
   border: solid 2px #ff0000;
 }
 
-.igble-proj-draggable-token {
+.draggable-token {
   border: solid 2px #AAAAAA;
   height: 2.0em;
   display: inline-block;

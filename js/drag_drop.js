@@ -6,24 +6,24 @@ igble.proj.dragDrop = {
 	init: function() {
 		// igble.proj.dragDrop.splitIntoDraggables("This is a sentence");
 		
-		$('.igble-proj-draggable').draggable({
+		$('.draggable').draggable({
 			revert: 'invalid'
 		});
-		$('.igble-proj-droppable').droppable({
-			accept: '.igble-proj-draggable', 
+		$('.droppable').droppable({
+			accept: '.draggable', 
 			activate: 
 				function(event, ui) {},
 						
 		});
-		$('#igble-proj-diagram-stage').droppable({});
+		$('#diagram-stage').droppable({});
 		
 		
 		
-		$('.igble-proj-draggable-token').draggable({
+		$('.draggable-token').draggable({
 			revert: 'invalid',			
 		});
-		$('.igble-proj-droppable-token').droppable({
-			accept: '.igble-proj-draggable-token',
+		$('.droppable-token').droppable({
+			accept: '.draggable-token',
 			activate: function(event, ui) {},
 			deactivate: function(event, ui) {},
 			drop: function(event, ui) {
@@ -54,7 +54,7 @@ igble.proj.dragDrop = {
 		console.log(words);
 		for(var i=0; i < words.length; i++) {
 			var word = words[i];
-			var $draggableWord = $("<div class='igble-proj-draggable igble-proj-token'></div>");
+			var $draggableWord = $("<div class='draggable token'></div>");
 			$draggableWord.append(word);
 			igble.proj.dragDrop.makeDraggable($draggableWord);
 			$('main').append($draggableWord);

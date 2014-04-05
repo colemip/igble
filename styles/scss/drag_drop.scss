@@ -10,24 +10,24 @@ body {
   width: 90%;
 }
 
-.igble-proj-token {
+.token {
   border: solid 1px #f9f9f9;
   padding: 0.9em 1.0em 0.5em 1.0em;
   height: 2.0em;
   width: 5.0em;
 }
 
-.iglbe-proj-noun-group {
+.noun-group {
   width: 50%;
   height: 5.0em;;
   position: relative;
   border: solid 1px #c9c9c9;
   
-  .igble-proj-noun {
+  .noun {
     border: solid 1px #f9f9f9;
   }
   
-  .igble-proj-noun-adjective {
+  .noun-adjective {
     width: 50%;
     position: absolute;
     transform: rotate($adj-rot);
@@ -41,14 +41,18 @@ body {
   
 }
 
-#igble-proj-diagram-stage {
+#token-bank {
+  margin-bottom: 2.0em;
+}
+
+#diagram-stage {
   position: relative;
   border-bottom: solid 2px #0f0f0f;
   width: 90%;
   min-height: 5.0em;
 }
 
-#igble-proj-noun-verb-sep {
+#noun-verb-sep {
   font-size: 5.0em;
   position: absolute; 
   top: 0.2em;
@@ -56,7 +60,7 @@ body {
   
 }
 
-.igble-proj-droppable-token {
+.droppable-token {
   border: solid 2px #AAAAAA;
   height: 2.0em;
   display: inline-block;
@@ -68,7 +72,7 @@ body {
   }
 }
 
-.igble-proj-draggable-token {
+.draggable-token {
   border: solid 2px #AAAAAA;
   height: 2.0em;
   display: inline-block;
