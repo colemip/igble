@@ -3,6 +3,11 @@ if(!window.igble.proj) { window.igble.proj = {}; }
 if(!window.igble.proj.dragDrop) { window.igble.proj.dragDrop = {}; }
 
 igble.proj.dragDrop = {
+	// attributes
+	nounGroupCount: 0,
+	
+	
+	
 	init: function() {
 		// igble.proj.dragDrop.splitIntoDraggables("This is a sentence");
 		
@@ -42,7 +47,8 @@ igble.proj.dragDrop = {
 	},
 	
 	onDrop: function(element) {
-		console.log("dropped!");
+		// console.log("dropped!");
+		igble.proj.dragDrop.nounGroupCount++;
 	},
 	
 	makeDraggable: function(element) {
