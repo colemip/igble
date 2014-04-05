@@ -44,6 +44,9 @@ body {
   width: 90%;
   min-height: 5.0em;
 }
+#diagram-stage #subject-group {
+  width: 50%;
+}
 
 #noun-verb-sep {
   font-size: 5.0em;
