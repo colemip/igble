@@ -42,10 +42,18 @@ body {
 }
 
 #igble-proj-diagram-stage {
+  position: relative;
+  border-bottom: solid 2px #0f0f0f;
+  width: 90%;
+  min-height: 5.0em;
 }
 
 #igble-proj-noun-verb-sep {
   font-size: 5.0em;
+  position: absolute; 
+  top: 0.2em;
+  left: 50%;
+  
 }
 
 .igble-proj-droppable-token {
