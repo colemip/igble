@@ -34,7 +34,6 @@ body {
   -webkit-transform: rotate(30deg);
   -moz-transform: rotate(30deg);
   -ms-transform: rotate(30deg);
-  border-bottom: solid 2px #090909;
   position: absolute;
   padding-left: 5.0em;
   left: 20px;
@@ -88,6 +87,9 @@ body {
 }
 .droppable-token.dropped {
   border: solid 2px #3333f3;
+}
+.droppable-token.dropped.adjective {
+  border-bottom: solid 2px #090909;
 }
 
 .draggable-token {

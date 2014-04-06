@@ -39,7 +39,7 @@ body {
     -webkit-transform: rotate($adj-rot);
     -moz-transform: rotate($adj-rot);
     -ms-transform: rotate($adj-rot);
-    border-bottom: solid 2px #090909;
+    // border-bottom: solid 2px #090909;
     position: absolute;
     // top: 6.1em;    
     // left: 1.0em;
@@ -104,7 +104,11 @@ body {
   
   &.dropped {
     border: solid 2px #3333f3;
-  }
+    
+    &.adjective {
+      border-bottom: solid 2px #090909;
+    }
+  }  
 }
 
 .draggable-token {
