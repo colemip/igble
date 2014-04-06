@@ -16,7 +16,6 @@ body {
 
 .noun-group {
   min-height: 4.0em;
-  border: solid 1px #c9c9c9;
   position: relative;
 }
 .noun-group .noun {
@@ -30,10 +29,10 @@ body {
 }
 .noun-group .adjective {
   width: 25%;
-  transform: rotate(30deg);
-  -webkit-transform: rotate(30deg);
-  -moz-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
   position: absolute;
   padding-left: 5.0em;
   left: 20px;

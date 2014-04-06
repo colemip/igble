@@ -25,6 +25,10 @@ igble.proj.dragDrop = {
 		
 		
 		$('.draggable-token').draggable({
+			drag: function(event, ui) {
+				var draggable = $(this).clone();
+				igble.proj.dragDrop.onDrag();				
+			},
 			revert: 'invalid',			
 		});
 		$('.droppable-token').droppable({
@@ -51,7 +55,7 @@ igble.proj.dragDrop = {
 	},
 	
 	onDrag: function(element) {
-		
+		console.log("onDrag invoked");
 	},
 	
 	onDrop: function(element) {
@@ -63,6 +67,8 @@ igble.proj.dragDrop = {
 				// $('#subject-group').append("<span class='droppable-token'></span>");
 				break;
 			case 'adj':
+				console.log('on drop adj');
+				$(element).rotate(30);
 				break;
 			default:
 				break;

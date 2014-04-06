@@ -2,7 +2,7 @@
  *   Stylesheet for drag and drop elements
  */
 
-$adj-rot: 30deg;
+$adj-rot: 0deg;
 
 body {
   margin: 0 auto; 
@@ -19,7 +19,6 @@ body {
 
 .noun-group {
   min-height: 4.0em;
-  border: solid 1px #c9c9c9;
   position: relative;
   
   .noun {
