@@ -37,7 +37,7 @@ igble.proj.dragDrop = {
 				$(ui.draggable).remove();
 				igble.proj.dragDrop.onDrop($(this));
 			},
-			hoverClass: 'dropped',
+			hoverClass: 'hover',
 			tolerance: 'intersect'
 		});
 		
@@ -111,9 +111,10 @@ igble.proj.dragDrop = {
 	 * 
 	 */
 	resizeTokenGroup: function(element) {
+		var percOfGroupLength = 90;
 		console.log("resizing elements in group");
 		var parentGroup = $(element).parent();
-		parentGroup.children().css('width',  100/igble.proj.dragDrop.nounGroupCount + "%" );
+		parentGroup.children().css('width',  percOfGroupLength/igble.proj.dragDrop.nounGroupCount + "%" );
 	}
 	
 };

@@ -65,14 +65,18 @@ body {
 }
 
 .droppable-token {
-  border: solid 2px #AAAAAA;
+  // border: solid 2px #AAAAAA;
   height: 2.0em;
   display: inline-block;
   padding: 0.75em 0.75em 0.1em 0.75em;
-  width: 100%;
+  width: 90%;
+  
+  &.hover {
+    border: solid 2px #ff0000;
+  }
   
   &.dropped {
-    border: solid 2px #ff0000;
+    border: solid 2px #3333f3;
   }
 }
 
