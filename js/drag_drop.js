@@ -40,6 +40,13 @@ igble.proj.dragDrop = {
 			hoverClass: 'dropped',
 			tolerance: 'intersect'
 		});
+		
+		// $('#subject-group').on('DOMNodeInserted', 'span.droppable-token', function() {
+			// console.log("span.droppable-token loaded");
+		// });
+		
+		// setup DOM mutation observer
+		igble.proj.dragDrop._initMutationObserver();
 	},
 	
 	onDrag: function(element) {
@@ -48,7 +55,9 @@ igble.proj.dragDrop = {
 	
 	onDrop: function(element) {
 		// console.log("dropped!");
-		igble.proj.dragDrop.nounGroupCount++;
+		// igble.proj.dragDrop.nounGroupCount++;		
+		$('#subject-group').append("<span class='droppable-token'></span>");
+		// $('.droppable-token').css('width',  100/igble.proj.dragDrop.nounGroupCount + "%" );
 	},
 	
 	makeDraggable: function(element) {
@@ -66,6 +75,45 @@ igble.proj.dragDrop = {
 			igble.proj.dragDrop.makeDraggable($draggableWord);
 			$('main').append($draggableWord);
 		}
+	},
+	
+	_initMutationObserver: function() {
+		var target =  $('#subject-group')[0];
+		
+		var observer = new MutationObserver(function (mutations) {
+			mutations.forEach(function(mutation) {
+				var newNodes = mutation.addedNodes;
+				if(newNodes !== null) { // if new nodes added
+					var $nodes = $(newNodes);
+					$nodes.each(function() {
+						var $node = $(this);
+						// console.log($node);
+						igble.proj.dragDrop.nounGroupCount++;
+						igble.proj.dragDrop.resizeTokenGroup($node);
+						// $node.css('width',  100/igble.proj.dragDrop.nounGroupCount + "%" );
+					});
+				}
+			});
+		});
+		
+		
+		
+		var observerConfig = {
+			attributes: true, 
+			childList: true, 
+			characterData: true 
+		};
+		
+		observer.observe(target, observerConfig);
+	}, 
+	
+	/**
+	 * 
+	 */
+	resizeTokenGroup: function(element) {
+		console.log("resizing elements in group");
+		var parentGroup = $(element).parent();
+		parentGroup.children().css('width',  100/igble.proj.dragDrop.nounGroupCount + "%" );
 	}
 	
 };
