@@ -4,7 +4,7 @@ if(!window.igble.proj.dragDrop) { window.igble.proj.dragDrop = {}; }
 
 igble.proj.dragDrop = {
 	// attributes
-	nounGroupCount: 0,
+	nounGroupCount: 1,
 	
 	
 	
@@ -133,7 +133,7 @@ igble.proj.dragDrop = {
 		var percOfGroupLength = 90;
 		console.log("resizing elements in group");
 		var parentGroup = $(element).parent();
-		parentGroup.children().css('width',  percOfGroupLength/igble.proj.dragDrop.nounGroupCount + "%" );
+		parentGroup.children().css('width',  percOfGroupLength/igble.proj.dragDrop.nounGroupCount - 5 + "%" );
 	}
 	
 };
