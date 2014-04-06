@@ -47,6 +47,7 @@ igble.proj.dragDrop = {
 		
 		// setup DOM mutation observer
 		igble.proj.dragDrop._initMutationObserver();
+		igble.proj.dragDrop._initAllAdjGroupMutationObservers();
 	},
 	
 	onDrag: function(element) {
@@ -54,9 +55,19 @@ igble.proj.dragDrop = {
 	},
 	
 	onDrop: function(element) {
-		// console.log("dropped!");
-		// igble.proj.dragDrop.nounGroupCount++;		
-		$('#subject-group').append("<span class='droppable-token'></span>");
+		console.log("dropped!");
+		// igble.proj.dragDrop.nounGroupCount++;	
+		switch($(element).data('pos')) {
+			case 'noun':
+				console.log('on drop noun');
+				$('#subject-group').append("<span class='droppable-token'></span>");
+				break;
+			case 'adj':
+				break;
+			default:
+				break;
+		}	
+		// $('#subject-group').append("<span class='droppable-token'></span>");
 		// $('.droppable-token').css('width',  100/igble.proj.dragDrop.nounGroupCount + "%" );
 	},
 	
@@ -125,6 +136,50 @@ igble.proj.dragDrop = {
 		
 		observer.observe(target, observerConfig);
 	}, 
+	
+	_initAllAdjGroupMutationObservers: function() {
+		var $allAdjGroups = $('.adjective-group');
+		console.log($allAdjGroups);
+		$allAdjGroups.each(function() {
+			igble.proj.dragDrop._initAdjGroupMutationObserver(this);
+		});	
+	},
+	
+	_initAdjGroupMutationObserver: function(group) {
+		var target = group;
+		console.log(target);
+		
+		var observer = new MutationObserver(function (mutations) {
+			mutations.forEach(function(mutation) {
+				var newNodes = mutation.addedNodes;
+				if(newNodes !== null) { // if new nodes added
+					var $nodes = $(newNodes);
+					$nodes.each(function() {
+						var $node = $(this);
+						// console.log($node);
+						// igble.proj.dragDrop.nounGroupCount++;
+						var childCount = $(target).children().length; 
+						igble.proj.dragDrop.makeDroppable($node);
+						$node.css('left', childCount*4 + 'em');
+						console.log('adj group thing added');
+						// igble.proj.dragDrop.resizeTokenGroup($node);
+						// $node.css('border', 'solid 2px #00f0f0');
+						// $node.css('width',  100/igble.proj.dragDrop.nounGroupCount + "%" );
+					});
+				}
+			});
+		});
+		
+		
+		
+		var observerConfig = {
+			attributes: true, 
+			childList: true, 
+			characterData: true 
+		};
+		console.log(observer);
+		observer.observe(target, observerConfig);
+	},
 	
 	/**
 	 * 

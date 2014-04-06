@@ -28,20 +28,24 @@ body {
   }
   
   .adjective-group {
-    position: relative;
+    position: absolute;
+    top: 6.1em;
+    width: 100%;
   }
   
   .adjective {
-    width: 30%;
-    position: absolute;
+    width: 25%;    
     transform: rotate($adj-rot);
     -webkit-transform: rotate($adj-rot);
     -moz-transform: rotate($adj-rot);
     -ms-transform: rotate($adj-rot);
     border-bottom: solid 2px #090909;
-    top: 6.1em;    
-    left: 1.0em;
+    position: absolute;
+    // top: 6.1em;    
+    // left: 1.0em;
     padding-left: 5.0em;
+    // float: left;
+    left: 20px;
   }
 
   
@@ -88,10 +92,10 @@ body {
 
 .droppable-token {
   // border: solid 2px #AAAAAA;
+  min-width: 5.0em;
   height: 2.0em;
   display: inline-block;
   padding: 0.75em 0.75em 0.1em 0.75em;
-  width: 90%;
   float: left;
   
   &.hover {

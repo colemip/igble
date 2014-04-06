@@ -24,19 +24,20 @@ body {
   position: absolute;
 }
 .noun-group .adjective-group {
-  position: relative;
+  position: absolute;
+  top: 6.1em;
+  width: 100%;
 }
 .noun-group .adjective {
-  width: 30%;
-  position: absolute;
+  width: 25%;
   transform: rotate(30deg);
   -webkit-transform: rotate(30deg);
   -moz-transform: rotate(30deg);
   -ms-transform: rotate(30deg);
   border-bottom: solid 2px #090909;
-  top: 6.1em;
-  left: 1.0em;
+  position: absolute;
   padding-left: 5.0em;
+  left: 20px;
 }
 
 .verb-group {
@@ -76,10 +77,10 @@ body {
 }
 
 .droppable-token {
+  min-width: 5.0em;
   height: 2.0em;
   display: inline-block;
   padding: 0.75em 0.75em 0.1em 0.75em;
-  width: 90%;
   float: left;
 }
 .droppable-token.hover {
