@@ -23,8 +23,11 @@ body {
   border: solid 1px #f9f9f9;
   position: absolute;
 }
+.noun-group .adjective-group {
+  position: relative;
+}
 .noun-group .adjective {
-  width: 50%;
+  width: 30%;
   position: absolute;
   transform: rotate(30deg);
   -webkit-transform: rotate(30deg);

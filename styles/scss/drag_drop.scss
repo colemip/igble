@@ -27,8 +27,12 @@ body {
     position: absolute;
   }
   
+  .adjective-group {
+    position: relative;
+  }
+  
   .adjective {
-    width: 50%;
+    width: 30%;
     position: absolute;
     transform: rotate($adj-rot);
     -webkit-transform: rotate($adj-rot);
