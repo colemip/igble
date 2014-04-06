@@ -60,7 +60,7 @@ igble.proj.dragDrop = {
 		switch($(element).data('pos')) {
 			case 'noun':
 				console.log('on drop noun');
-				$('#subject-group').append("<span class='droppable-token'></span>");
+				// $('#subject-group').append("<span class='droppable-token'></span>");
 				break;
 			case 'adj':
 				break;

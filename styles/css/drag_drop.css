@@ -43,7 +43,8 @@ body {
   width: 50%;
   min-height: 4.0em;
   border: solid 1px #c9c9c9;
-  float: left;
+  position: absolute;
+  left: 52%;
 }
 
 #token-bank {
