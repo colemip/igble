@@ -133,7 +133,6 @@ igble.proj.dragDrop = {
 		var percOfGroupLength = 90;
 		console.log("resizing elements in group");
 		var parentGroup = $(element).parent();
-		parentGroup.children().css('width',  percOfGroupLength/igble.proj.dragDrop.nounGroupCount - 5 + "%" );
 	}
 	
 };
