@@ -65,6 +65,23 @@ igble.proj.dragDrop = {
 		$(element).draggable();		
 	},
 	
+	makeDroppable: function(element) {
+		console.log(element);
+		$(element).droppable({
+			accept: '.draggable-token',
+			activate: function(event, ui) {},
+			deactivate: function(event, ui) {},
+			drop: function(event, ui) {
+				$(this).text($(ui.draggable).text());
+				$(this).addClass('dropped');
+				$(ui.draggable).remove();
+				igble.proj.dragDrop.onDrop($(this));
+			},
+			hoverClass: 'hover',
+			tolerance: 'intersect'
+		});
+	},
+	
 	splitIntoDraggables: function(string) {
 		var words = string.split(' ');
 		console.log(words);
@@ -89,7 +106,9 @@ igble.proj.dragDrop = {
 						var $node = $(this);
 						// console.log($node);
 						igble.proj.dragDrop.nounGroupCount++;
+						igble.proj.dragDrop.makeDroppable($node);
 						igble.proj.dragDrop.resizeTokenGroup($node);
+						$node.css('border', 'solid 2px #00f0f0');
 						// $node.css('width',  100/igble.proj.dragDrop.nounGroupCount + "%" );
 					});
 				}
