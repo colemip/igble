@@ -60,6 +60,7 @@ body {
   display: inline-block;
   padding: 0.75em 0.75em 0.1em 0.75em;
   width: 90%;
+  float: left;
 }
 .droppable-token.hover {
   border: solid 2px #ff0000;
