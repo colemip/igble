@@ -23,7 +23,7 @@ body {
 .noun-group .noun {
   border: solid 1px #f9f9f9;
 }
-.noun-group .noun-adjective {
+.noun-group .adjective {
   width: 50%;
   position: absolute;
   transform: rotate(30deg);
