@@ -18,13 +18,13 @@ body {
 }
 
 .noun-group {
-  width: 50%;
-  height: 5.0em;;
-  position: relative;
+  min-height: 4.0em;
   border: solid 1px #c9c9c9;
+  position: relative;
   
   .noun {
     border: solid 1px #f9f9f9;
+    position: absolute;
   }
   
   .adjective {
@@ -35,10 +35,19 @@ body {
     -moz-transform: rotate($adj-rot);
     -ms-transform: rotate($adj-rot);
     border-bottom: solid 2px #090909;
-    top: 5.0em;    
+    top: 6.1em;    
+    left: 1.0em;
+    padding-left: 5.0em;
   }
 
   
+}
+
+.verb-group {
+  width: 50%;
+  min-height: 4.0em;
+  border: solid 1px #c9c9c9; 
+  float: left;
 }
 
 #token-bank {
@@ -48,7 +57,7 @@ body {
 #diagram-stage {
   position: relative;
   border-bottom: solid 2px #0f0f0f;
-  width: 90%;
+  width: 100%;
   min-height: 5.0em;
   
   #subject-group {
@@ -70,7 +79,7 @@ body {
   position: absolute; 
   top: 0.2em;
   left: 50%;
-  
+  float: left;
 }
 
 .droppable-token {
