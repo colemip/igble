@@ -45,7 +45,6 @@ body {
 }
 .noun-group .adjective-group {
   position: absolute;
-  top: 6.1em;
   width: 100%;
 }
 .noun-group .adjective {
@@ -53,8 +52,6 @@ body {
   height: 1.1em;
   position: absolute;
   padding-left: 5.0em;
-  left: 20px;
-  top: 0.5em;
 }
 
 .verb-group {
