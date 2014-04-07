@@ -58,7 +58,6 @@ body {
 .verb-group {
   width: 50%;
   min-height: 4.0em;
-  border: solid 1px #c9c9c9;
   position: absolute;
   left: 52%;
 }
