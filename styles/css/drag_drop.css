@@ -45,6 +45,7 @@ body {
 }
 .noun-group .adjective-group {
   position: absolute;
+  top: 4.0em;
   width: 100%;
 }
 .noun-group .adjective {

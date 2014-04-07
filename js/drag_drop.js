@@ -77,6 +77,8 @@ igble.proj.dragDrop = {
 	
 	_onDropAdj: function(element) {
 		// console.log("adj dropped");
+		// move up to be flush with noun underline
+		$(element).css('top', '-2.0em');
 		$(element).rotate({angle: 30, center: ["0%", "0%"]});
 		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adj'></span>");
 	},
