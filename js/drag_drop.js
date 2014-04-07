@@ -78,11 +78,12 @@ igble.proj.dragDrop = {
 	_onDropAdj: function(element) {
 		// console.log("adj dropped");
 		$(element).rotate(30);
+		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adj'></span>");
 	},
 	
 	makeDraggable: function(element) {
 		console.log(element);
-		$(element).draggable();		
+		$(element).draggable();				
 	},
 	
 	makeDroppable: function(element) {
