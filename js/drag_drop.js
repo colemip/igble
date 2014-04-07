@@ -63,18 +63,21 @@ igble.proj.dragDrop = {
 		// igble.proj.dragDrop.nounGroupCount++;	
 		switch($(element).data('pos')) {
 			case 'noun':
-				console.log('on drop noun');
 				// $('#subject-group').append("<span class='droppable-token'></span>");
 				break;
-			case 'adj':
-				console.log('on drop adj');
-				$(element).rotate(30);
+			case 'adj':				
+				igble.proj.dragDrop._onDropAdj(element);
 				break;
 			default:
 				break;
 		}	
 		// $('#subject-group').append("<span class='droppable-token'></span>");
 		// $('.droppable-token').css('width',  100/igble.proj.dragDrop.nounGroupCount + "%" );
+	},
+	
+	_onDropAdj: function(element) {
+		// console.log("adj dropped");
+		$(element).rotate(30);
 	},
 	
 	makeDraggable: function(element) {
