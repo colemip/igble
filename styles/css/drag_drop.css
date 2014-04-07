@@ -29,10 +29,6 @@ body {
 }
 .noun-group .adjective {
   width: 25%;
-  transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
   position: absolute;
   padding-left: 5.0em;
   left: 20px;
