@@ -29,9 +29,11 @@ body {
 }
 .noun-group .adjective {
   width: 25%;
+  height: 1.1em;
   position: absolute;
   padding-left: 5.0em;
   left: 20px;
+  top: 0.5em;
 }
 
 .verb-group {

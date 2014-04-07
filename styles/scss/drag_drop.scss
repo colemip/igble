@@ -33,18 +33,12 @@ body {
   }
   
   .adjective {
-    width: 25%;    
-    // transform: rotate($adj-rot);
-    // -webkit-transform: rotate($adj-rot);
-    // -moz-transform: rotate($adj-rot);
-    // -ms-transform: rotate($adj-rot);
-    // border-bottom: solid 2px #090909;
+    width: 25%;
+    height: 1.1em;
     position: absolute;
-    // top: 6.1em;    
-    // left: 1.0em;
     padding-left: 5.0em;
-    // float: left;
     left: 20px;
+    top: 0.5em;            
   }
 
   
