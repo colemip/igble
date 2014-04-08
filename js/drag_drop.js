@@ -59,16 +59,21 @@ igble.proj = [
 		console.log("onDrag invoked");
 	},
 	
-	onDrop: function(element) {
+	onDrop: function(draggable, droppable) {
 		console.log("dropped!");
 		// dragDrop.nounGroupCount++;	
-		switch($(element).data('pos')) {
+		switch($(draggable).data('pos')) {
 			case 'noun':
 				// $('#subject-group').append("<span class='droppable-token'></span>");
-				console.log($(element).attr('class'));
+				// console.log($(element).attr('class'));
+				console.log($(draggable).data('role'));				
+				console.log($(droppable).data('role'));
+				console.log(droppable);
+				if($(draggable).data('role') === $(droppable).data('role'))
+					console.log("SUCCESS!");
 				break;
 			case 'adj':				
-				dragDrop._onDropAdj(element);
+				dragDrop._onDropAdj(draggable);
 				break;
 			default:
 				break;
@@ -106,7 +111,7 @@ igble.proj = [
 				$(this).text($(ui.draggable).text());
 				$(this).addClass('dropped');
 				$(ui.draggable).remove();
-				dragDrop.onDrop($(this));
+				dragDrop.onDrop($(this), ui.draggable);
 			},
 			hoverClass: 'hover',
 			tolerance: 'intersect'
