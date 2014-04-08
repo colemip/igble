@@ -87,6 +87,9 @@ igble.proj = {
 			case 'adj':				
 				igble.proj.dragDrop._onDropAdj(draggable);
 				break;
+			case 'adv':
+				igble.proj.dragDrop._onDropAdverb(draggable);
+				break;
 			default:
 				break;
 		}	
@@ -101,6 +104,9 @@ igble.proj = {
 		$(element).rotate({angle: 30, center: ["0%", "0%"]});
 	},
 	
+	_onDropAdverb: function(element) {
+		console.log('adverb dropped!');
+	},
 	
 	
 	splitIntoDraggables: function(string) {
