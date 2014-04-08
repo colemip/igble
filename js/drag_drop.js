@@ -65,6 +65,7 @@ igble.proj = [
 		switch($(element).data('pos')) {
 			case 'noun':
 				// $('#subject-group').append("<span class='droppable-token'></span>");
+				console.log($(element).attr('class'));
 				break;
 			case 'adj':				
 				dragDrop._onDropAdj(element);
@@ -125,9 +126,10 @@ igble.proj = [
 	},
 	
 	_initMutationObserver: function() {
-		var target =  $('#subject-group')[0];
+		var target =  $('#subject-group .noun-group')[0];
 		
 		var observer = new MutationObserver(function (mutations) {
+			console.log("mutating");
 			mutations.forEach(function(mutation) {
 				var newNodes = mutation.addedNodes;
 				if(newNodes !== null) { // if new nodes added
@@ -139,6 +141,7 @@ igble.proj = [
 						dragDrop.makeDroppable($node);
 						dragDrop.resizeTokenGroup($node);
 						$node.css('border', 'solid 2px #00f0f0');
+						console.log($node.attr('class'));
 						// $node.css('width',  100/dragDrop.nounGroupCount + "%" );
 					});
 				}
