@@ -2,6 +2,8 @@
  *   Stylesheet for drag and drop elements
  */
 
+// Drag icon provided by http://gentleface.com/
+
 $adj-rot: 0deg;
 $default-underline: solid 2px #090909;
 // $token-border-radius: 8px;
@@ -135,4 +137,8 @@ body {
   padding: 0.75em 0.75em 0.1em 0.75em;
   min-width: 5.0em;
   cursor: pointer;
+  background-image: url('../../img/icons/drag_arrow.png');
+  background-size: auto 50%;
+  background-repeat: no-repeat;
+  background-position: right center;
 }
