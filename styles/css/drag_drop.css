@@ -96,7 +96,7 @@ body {
   float: left;
 }
 .droppable-token.hover {
-  border: solid 2px #ff0000;
+  border: solid 2px #00f300;
 }
 .droppable-token.dropped.adjective {
   border-bottom: solid 2px #090909;
