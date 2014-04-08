@@ -2,13 +2,16 @@
  *   Stylesheet for drag and drop elements
  */
 body {
-  margin: 0 auto;
+  margin: 5.0em auto;
   text-align: left;
   width: 90%;
 }
 
 #token-bank {
   margin-bottom: 2.0em;
+}
+#token-bank .token {
+  margin-right: 2.0em;
 }
 
 #diagram-stage {
