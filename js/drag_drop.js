@@ -209,7 +209,13 @@ igble.proj = [
 		var parentGroup = $(element).parent();
 	}
 	
+},
+
+scorer = {
+	
+	
 }
+
 ];
 
 $(document).ready(function() {
