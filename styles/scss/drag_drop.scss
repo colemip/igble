@@ -70,8 +70,11 @@ body {
         &.dropped {
           border-bottom: $default-underline;
           border-left: $default-underline;
-          height: 2.0em;
+          height: 1.8em;
           width: 90%;
+          padding-top: 1.5em;
+          padding-bottom: 0.1em;
+          padding-left: 0.5em;
         }  
       } 
     }               
