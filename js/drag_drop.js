@@ -39,6 +39,43 @@ igble.proj = [
 		dragDrop._initAllAdjGroupMutationObservers();
 	},
 	
+	/**
+	 * --------------------------------------------------------------------------------------
+	 * Attach draggable functionality to an element or group of elements
+	 * 
+	 * @param element -- element or group of elements to make draggable
+	 * -------------------------------------------------------------------------------------- 
+	 */
+	makeDraggable: function(element) {
+		console.log(element);
+		$(element).draggable();				
+	},
+	
+	
+	/**
+	 * --------------------------------------------------------------------------------------
+	 * Attach droppable functionality to an element or group of elements
+	 * 
+	 * @param element -- element or group of elements to make droppable
+	 * -------------------------------------------------------------------------------------- 
+	 */
+	makeDroppable: function(element) {
+		console.log(element);
+		$(element).droppable({
+			accept: '.draggable-token',
+			activate: function(event, ui) {},
+			deactivate: function(event, ui) {},
+			drop: function(event, ui) {
+				$(this).text($(ui.draggable).text());
+				$(this).addClass('dropped');				
+				dragDrop.onDrop($(this), ui.draggable);
+				$(ui.draggable).hide();
+			},
+			hoverClass: 'hover',
+			tolerance: 'intersect'
+		});
+	},
+	
 	onDrag: function(element) {
 		console.log("onDrag invoked");
 	},
@@ -73,27 +110,7 @@ igble.proj = [
 		$(element).rotate({angle: 30, center: ["0%", "0%"]});
 	},
 	
-	makeDraggable: function(element) {
-		console.log(element);
-		$(element).draggable();				
-	},
 	
-	makeDroppable: function(element) {
-		console.log(element);
-		$(element).droppable({
-			accept: '.draggable-token',
-			activate: function(event, ui) {},
-			deactivate: function(event, ui) {},
-			drop: function(event, ui) {
-				$(this).text($(ui.draggable).text());
-				$(this).addClass('dropped');				
-				dragDrop.onDrop($(this), ui.draggable);
-				$(ui.draggable).hide();
-			},
-			hoverClass: 'hover',
-			tolerance: 'intersect'
-		});
-	},
 	
 	splitIntoDraggables: function(string) {
 		var words = string.split(' ');
