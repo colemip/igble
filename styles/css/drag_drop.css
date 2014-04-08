@@ -79,6 +79,12 @@ body {
   position: absolute;
   left: 52%;
 }
+.verb-group .adverb-group {
+  position: absolute;
+  top: 4.0em;
+  width: 100%;
+  border: solid 1px #f30000;
+}
 
 #subject-verb-sep {
   font-size: 5.0em;

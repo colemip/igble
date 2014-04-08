@@ -81,7 +81,7 @@ body {
     // left: 20px;
     // top: 0.5em;    
     
-    .adverb-group {
+    .adverb-group {           
       .adverb {      
         &.dropped {
           border-bottom: $default-underline;
@@ -102,6 +102,14 @@ body {
   min-height: 4.0em;  
   position: absolute;
   left: 52%;
+  
+  .adverb-group {      
+    position: absolute;
+    top: 4.0em;
+    width: 100%;
+    border: solid 1px #f30000;
+  }
+  
 }
 
 
