@@ -179,7 +179,7 @@ igble.proj = [
 						// dragDrop.nounGroupCount++;
 						var childCount = $(target).children().length; 
 						dragDrop.makeDroppable($node);
-						$node.css('left', childCount*4 + 'em');
+						$node.css('left', childCount*8 - 6 + 'em');
 						console.log('adj group thing added');
 						// dragDrop.resizeTokenGroup($node);
 						// $node.css('border', 'solid 2px #00f0f0');
