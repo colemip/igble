@@ -1,16 +1,16 @@
 if(!window.igble) { window.igble = {}; }
 if(!window.igble.proj) { window.igble.proj = {}; }
-if(!window.igble.proj['dragDrop']) { window.igble['dragDrop'] = {}; }
+if(!window.igble.proj.dragDrop) { window.igble.proj.dragDrop = {}; }
 
-igble.proj = [	
-	dragDrop = {
+igble.proj = {	
+	dragDrop : {
 	// attributes
 	nounGroupCount: 1,
 	
 	
 	
 	init: function() {
-		// dragDrop.splitIntoDraggables("This is a sentence");
+		// igble.proj.dragDrop.splitIntoDraggables("This is a sentence");
 		$('.draggable').draggable({
 			revert: 'invalid'
 		});
@@ -27,16 +27,16 @@ igble.proj = [
 		$('.draggable-token').draggable({
 			drag: function(event, ui) {
 				var draggable = $(this).clone();
-				dragDrop.onDrag(draggable);				
+				igble.proj.dragDrop.onDrag(draggable);				
 			},
 			revert: 'invalid',			
 		});
 		
-		dragDrop.makeDroppable($('.droppable-token'));
+		igble.proj.dragDrop.makeDroppable($('.droppable-token'));
 		
 		// setup DOM mutation observer
-		dragDrop._initMutationObserver();
-		dragDrop._initAllAdjGroupMutationObservers();
+		// igble.proj.dragDrop._initMutationObserver();
+		igble.proj.dragDrop._initAllAdjGroupMutObs();
 	},
 	
 	/**
@@ -66,7 +66,7 @@ igble.proj = [
 			drop: function(event, ui) {
 				$(this).text($(ui.draggable).text());
 				$(this).addClass('dropped');				
-				dragDrop.onDrop($(this), ui.draggable);
+				igble.proj.dragDrop.onDrop($(this), ui.draggable);
 				$(ui.draggable).hide();
 			},
 			hoverClass: 'hover',
@@ -85,7 +85,7 @@ igble.proj = [
 					console.log("SUCCESS!");
 				break;
 			case 'adj':				
-				dragDrop._onDropAdj(draggable);
+				igble.proj.dragDrop._onDropAdj(draggable);
 				break;
 			default:
 				break;
@@ -96,7 +96,7 @@ igble.proj = [
 		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adj'></span>");
 		$(element).append("<div class='adverb-group'></div>");
 		$(element).find('.adverb-group').append("<div class='droppable-token adverb dropped'></div>");
-		dragDrop.makeDroppable($(element).find('.adverb.dropped'));									
+		igble.proj.dragDrop.makeDroppable($(element).find('.adverb.dropped'));									
 		$(element).css('top', '-2.0em');
 		$(element).rotate({angle: 30, center: ["0%", "0%"]});
 	},
@@ -109,19 +109,19 @@ igble.proj = [
 			var word = words[i];
 			var $draggableWord = $("<div class='draggable token'></div>");
 			$draggableWord.append(word);
-			dragDrop.makeDraggable($draggableWord);
+			igble.proj.dragDrop.makeDraggable($draggableWord);
 			$('main').append($draggableWord);
 		}
 	},
 		
-	_initAllAdjGroupMutationObservers: function() {
+	_initAllAdjGroupMutObs: function() {
 		var $allAdjGroups = $('.adjective-group');
 		$allAdjGroups.each(function() {
-			dragDrop._initAdjGroupMutationObserver(this);
+			igble.proj.dragDrop._initAdjGroupMutObs(this);
 		});	
 	},
 	
-	_initAdjGroupMutationObserver: function(group) {
+	_initAdjGroupMutObs: function(group) {
 		var target = group;
 		
 		var observer = new MutationObserver(function (mutations) {
@@ -132,7 +132,7 @@ igble.proj = [
 					$nodes.each(function() {
 						var $node = $(this);
 						var childCount = $(target).children().length; 
-						dragDrop.makeDroppable($node);
+						igble.proj.dragDrop.makeDroppable($node);
 						$node.css('left', childCount*8 - 6 + 'em');
 					});
 				}
@@ -149,11 +149,11 @@ igble.proj = [
 	}
 },
 
-assessment = {	
+assessment : {	
 }
 
-];
+};
 
 $(document).ready(function() {
-	dragDrop.init();
+	igble.proj.dragDrop.init();
 });
