@@ -32,19 +32,22 @@ igble.proj = [
 			},
 			revert: 'invalid',			
 		});
-		$('.droppable-token').droppable({
-			accept: '.draggable-token',
-			activate: function(event, ui) {},
-			deactivate: function(event, ui) {},
-			drop: function(event, ui) {
-				$(this).text($(ui.draggable).text());
-				$(this).addClass('dropped');
-				$(ui.draggable).remove();
-				dragDrop.onDrop($(this));
-			},
-			hoverClass: 'hover',
-			tolerance: 'intersect'
-		});
+		
+		dragDrop.makeDroppable($('.droppable-token'));
+		
+		// $('.droppable-token').droppable({
+			// accept: '.draggable-token',
+			// activate: function(event, ui) {},
+			// deactivate: function(event, ui) {},
+			// drop: function(event, ui) {
+				// $(this).text($(ui.draggable).text());
+				// $(this).addClass('dropped');
+				// $(ui.draggable).remove();
+				// dragDrop.onDrop($(this));
+			// },
+			// hoverClass: 'hover',
+			// tolerance: 'intersect'
+		// });
 		
 		// $('#subject-group').on('DOMNodeInserted', 'span.droppable-token', function() {
 			// console.log("span.droppable-token loaded");
@@ -64,11 +67,6 @@ igble.proj = [
 		// dragDrop.nounGroupCount++;	
 		switch($(draggable).data('pos')) {
 			case 'noun':
-				// $('#subject-group').append("<span class='droppable-token'></span>");
-				// console.log($(element).attr('class'));
-				console.log($(draggable).data('role'));				
-				console.log($(droppable).data('role'));
-				console.log(droppable);
 				if($(draggable).data('role') === $(droppable).data('role'))
 					console.log("SUCCESS!");
 				break;
@@ -78,8 +76,6 @@ igble.proj = [
 			default:
 				break;
 		}	
-		// $('#subject-group').append("<span class='droppable-token'></span>");
-		// $('.droppable-token').css('width',  100/dragDrop.nounGroupCount + "%" );
 	},
 	
 	_onDropAdj: function(element) {
@@ -109,9 +105,9 @@ igble.proj = [
 			deactivate: function(event, ui) {},
 			drop: function(event, ui) {
 				$(this).text($(ui.draggable).text());
-				$(this).addClass('dropped');
-				$(ui.draggable).remove();
+				$(this).addClass('dropped');				
 				dragDrop.onDrop($(this), ui.draggable);
+				$(ui.draggable).hide();
 			},
 			hoverClass: 'hover',
 			tolerance: 'intersect'
