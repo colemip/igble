@@ -113,35 +113,7 @@ igble.proj = [
 			$('main').append($draggableWord);
 		}
 	},
-	
-	// _initMutationObserver: function() {
-		// var target =  $('#subject-group .noun-group')[0];
-// 		
-		// var observer = new MutationObserver(function (mutations) {
-			// mutations.forEach(function(mutation) {
-				// var newNodes = mutation.addedNodes;
-				// if(newNodes !== null) { // if new nodes added
-					// var $nodes = $(newNodes);
-					// $nodes.each(function() {
-						// var $node = $(this);
-						// dragDrop.nounGroupCount++;
-						// dragDrop.makeDroppable($node);
-						// dragDrop.resizeTokenGroup($node);
-						// $node.css('border', 'solid 2px #00f0f0');
-					// });
-				// }
-			// });
-		// });
-// 						
-		// var observerConfig = {
-			// attributes: true, 
-			// childList: true, 
-			// characterData: true 
-		// };
-// 		
-		// observer.observe(target, observerConfig);
-	// }, 
-	
+		
 	_initAllAdjGroupMutationObservers: function() {
 		var $allAdjGroups = $('.adjective-group');
 		$allAdjGroups.each(function() {
