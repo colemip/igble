@@ -1,15 +1,16 @@
 if(!window.igble) { window.igble = {}; }
 if(!window.igble.proj) { window.igble.proj = {}; }
-if(!window.igble.proj.dragDrop) { window.igble.proj.dragDrop = {}; }
+if(!window.igble.proj['dragDrop']) { window.igble['dragDrop'] = {}; }
 
-igble.proj.dragDrop = {
+igble.proj = [	
+	dragDrop = {
 	// attributes
 	nounGroupCount: 1,
 	
 	
 	
 	init: function() {
-		// igble.proj.dragDrop.splitIntoDraggables("This is a sentence");
+		// dragDrop.splitIntoDraggables("This is a sentence");
 		
 		$('.draggable').draggable({
 			revert: 'invalid'
@@ -27,7 +28,7 @@ igble.proj.dragDrop = {
 		$('.draggable-token').draggable({
 			drag: function(event, ui) {
 				var draggable = $(this).clone();
-				igble.proj.dragDrop.onDrag();				
+				dragDrop.onDrag();				
 			},
 			revert: 'invalid',			
 		});
@@ -39,7 +40,7 @@ igble.proj.dragDrop = {
 				$(this).text($(ui.draggable).text());
 				$(this).addClass('dropped');
 				$(ui.draggable).remove();
-				igble.proj.dragDrop.onDrop($(this));
+				dragDrop.onDrop($(this));
 			},
 			hoverClass: 'hover',
 			tolerance: 'intersect'
@@ -50,8 +51,8 @@ igble.proj.dragDrop = {
 		// });
 		
 		// setup DOM mutation observer
-		igble.proj.dragDrop._initMutationObserver();
-		igble.proj.dragDrop._initAllAdjGroupMutationObservers();
+		dragDrop._initMutationObserver();
+		dragDrop._initAllAdjGroupMutationObservers();
 	},
 	
 	onDrag: function(element) {
@@ -60,19 +61,19 @@ igble.proj.dragDrop = {
 	
 	onDrop: function(element) {
 		console.log("dropped!");
-		// igble.proj.dragDrop.nounGroupCount++;	
+		// dragDrop.nounGroupCount++;	
 		switch($(element).data('pos')) {
 			case 'noun':
 				// $('#subject-group').append("<span class='droppable-token'></span>");
 				break;
 			case 'adj':				
-				igble.proj.dragDrop._onDropAdj(element);
+				dragDrop._onDropAdj(element);
 				break;
 			default:
 				break;
 		}	
 		// $('#subject-group').append("<span class='droppable-token'></span>");
-		// $('.droppable-token').css('width',  100/igble.proj.dragDrop.nounGroupCount + "%" );
+		// $('.droppable-token').css('width',  100/dragDrop.nounGroupCount + "%" );
 	},
 	
 	_onDropAdj: function(element) {
@@ -80,7 +81,8 @@ igble.proj.dragDrop = {
 		// move up to be flush with noun underline		
 		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adj'></span>");
 		$(element).append("<div class='adverb-group'></div>");
-		$(element).find('.adverb-group').append("<div class='adverb dropped'>ADVERB</div>");									
+		$(element).find('.adverb-group').append("<div class='adverb dropped'>ADVERB</div>");
+		dragDrop.makeDroppable($(element).find('.adverb.dropped'));									
 		// var adjCountInGroup = $(element).parent('.adjective-group').length;
 		// console.log("adj group count: " + adjCountInGroup);
 		$(element).css('top', '-2.0em');
@@ -103,7 +105,7 @@ igble.proj.dragDrop = {
 				$(this).text($(ui.draggable).text());
 				$(this).addClass('dropped');
 				$(ui.draggable).remove();
-				igble.proj.dragDrop.onDrop($(this));
+				dragDrop.onDrop($(this));
 			},
 			hoverClass: 'hover',
 			tolerance: 'intersect'
@@ -117,7 +119,7 @@ igble.proj.dragDrop = {
 			var word = words[i];
 			var $draggableWord = $("<div class='draggable token'></div>");
 			$draggableWord.append(word);
-			igble.proj.dragDrop.makeDraggable($draggableWord);
+			dragDrop.makeDraggable($draggableWord);
 			$('main').append($draggableWord);
 		}
 	},
@@ -133,11 +135,11 @@ igble.proj.dragDrop = {
 					$nodes.each(function() {
 						var $node = $(this);
 						// console.log($node);
-						igble.proj.dragDrop.nounGroupCount++;
-						igble.proj.dragDrop.makeDroppable($node);
-						igble.proj.dragDrop.resizeTokenGroup($node);
+						dragDrop.nounGroupCount++;
+						dragDrop.makeDroppable($node);
+						dragDrop.resizeTokenGroup($node);
 						$node.css('border', 'solid 2px #00f0f0');
-						// $node.css('width',  100/igble.proj.dragDrop.nounGroupCount + "%" );
+						// $node.css('width',  100/dragDrop.nounGroupCount + "%" );
 					});
 				}
 			});
@@ -158,7 +160,7 @@ igble.proj.dragDrop = {
 		var $allAdjGroups = $('.adjective-group');
 		console.log($allAdjGroups);
 		$allAdjGroups.each(function() {
-			igble.proj.dragDrop._initAdjGroupMutationObserver(this);
+			dragDrop._initAdjGroupMutationObserver(this);
 		});	
 	},
 	
@@ -174,14 +176,14 @@ igble.proj.dragDrop = {
 					$nodes.each(function() {
 						var $node = $(this);
 						// console.log($node);
-						// igble.proj.dragDrop.nounGroupCount++;
+						// dragDrop.nounGroupCount++;
 						var childCount = $(target).children().length; 
-						igble.proj.dragDrop.makeDroppable($node);
+						dragDrop.makeDroppable($node);
 						$node.css('left', childCount*4 + 'em');
 						console.log('adj group thing added');
-						// igble.proj.dragDrop.resizeTokenGroup($node);
+						// dragDrop.resizeTokenGroup($node);
 						// $node.css('border', 'solid 2px #00f0f0');
-						// $node.css('width',  100/igble.proj.dragDrop.nounGroupCount + "%" );
+						// $node.css('width',  100/dragDrop.nounGroupCount + "%" );
 					});
 				}
 			});
@@ -207,9 +209,10 @@ igble.proj.dragDrop = {
 		var parentGroup = $(element).parent();
 	}
 	
-};
+}
+];
 
 $(document).ready(function() {
 	console.log("page ready");
-	igble.proj.dragDrop.init();
+	dragDrop.init();
 });
