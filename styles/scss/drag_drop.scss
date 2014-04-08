@@ -3,6 +3,7 @@
  */
 
 $adj-rot: 0deg;
+$default-underline: solid 2px #090909;
 
 body {
   margin: 0 auto; 
@@ -62,10 +63,19 @@ body {
     position: absolute;
     padding-left: 5.0em;
     // left: 20px;
-    // top: 0.5em;            
+    // top: 0.5em;    
+    
+    .adverb-group {
+      .adverb {      
+        &.dropped {
+          border-bottom: $default-underline;
+          border-left: $default-underline;
+          height: 2.0em;
+          width: 90%;
+        }  
+      } 
+    }               
   }
-
-  
 }
 
 .verb-group {
@@ -101,7 +111,7 @@ body {
     // border: solid 2px #3333f3;
     
     &.adjective {
-      border-bottom: solid 2px #090909;
+      border-bottom: $default-underline;
     }
   }  
 }

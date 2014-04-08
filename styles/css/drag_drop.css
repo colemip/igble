@@ -54,6 +54,12 @@ body {
   position: absolute;
   padding-left: 5.0em;
 }
+.noun-group .adjective .adverb-group .adverb.dropped {
+  border-bottom: solid 2px #090909;
+  border-left: solid 2px #090909;
+  height: 2.0em;
+  width: 90%;
+}
 
 .verb-group {
   width: 50%;
