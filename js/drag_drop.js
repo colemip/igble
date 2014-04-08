@@ -11,7 +11,6 @@ igble.proj = [
 	
 	init: function() {
 		// dragDrop.splitIntoDraggables("This is a sentence");
-		
 		$('.draggable').draggable({
 			revert: 'invalid'
 		});
@@ -215,9 +214,7 @@ igble.proj = [
 	
 },
 
-scorer = {
-	
-	
+assessment = {	
 }
 
 ];
@@ -225,4 +222,5 @@ scorer = {
 $(document).ready(function() {
 	console.log("page ready");
 	dragDrop.init();
+	// assessment.test();
 });
