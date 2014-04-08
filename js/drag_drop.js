@@ -81,7 +81,7 @@ igble.proj = [
 		// move up to be flush with noun underline		
 		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adj'></span>");
 		$(element).append("<div class='adverb-group'></div>");
-		$(element).find('.adverb-group').append("<div class='adverb dropped'>ADVERB</div>");
+		$(element).find('.adverb-group').append("<div class='droppable-token adverb dropped'></div>");
 		dragDrop.makeDroppable($(element).find('.adverb.dropped'));									
 		// var adjCountInGroup = $(element).parent('.adjective-group').length;
 		// console.log("adj group count: " + adjCountInGroup);
