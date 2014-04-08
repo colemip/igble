@@ -27,30 +27,12 @@ igble.proj = [
 		$('.draggable-token').draggable({
 			drag: function(event, ui) {
 				var draggable = $(this).clone();
-				dragDrop.onDrag();				
+				dragDrop.onDrag(draggable);				
 			},
 			revert: 'invalid',			
 		});
 		
 		dragDrop.makeDroppable($('.droppable-token'));
-		
-		// $('.droppable-token').droppable({
-			// accept: '.draggable-token',
-			// activate: function(event, ui) {},
-			// deactivate: function(event, ui) {},
-			// drop: function(event, ui) {
-				// $(this).text($(ui.draggable).text());
-				// $(this).addClass('dropped');
-				// $(ui.draggable).remove();
-				// dragDrop.onDrop($(this));
-			// },
-			// hoverClass: 'hover',
-			// tolerance: 'intersect'
-		// });
-		
-		// $('#subject-group').on('DOMNodeInserted', 'span.droppable-token', function() {
-			// console.log("span.droppable-token loaded");
-		// });
 		
 		// setup DOM mutation observer
 		dragDrop._initMutationObserver();
