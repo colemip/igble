@@ -98,8 +98,8 @@ igble.proj = {
 	_onDropAdj: function(element) {
 		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adj'></span>");
 		$(element).append("<div class='adverb-group'></div>");
-		$(element).find('.adverb-group').append("<div class='droppable-token adverb dropped'></div>");
-		igble.proj.dragDrop.makeDroppable($(element).find('.adverb.dropped'));									
+		$(element).find('.adverb-group').append("<div class='droppable-token adverb'></div>");
+		igble.proj.dragDrop.makeDroppable($(element).find('.adverb'));									
 		$(element).css('top', '-2.0em');
 		$(element).rotate({angle: 30, center: ["0%", "0%"]});
 	},
