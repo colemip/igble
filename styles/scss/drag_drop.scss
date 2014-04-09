@@ -81,6 +81,10 @@ body {
     // left: 20px;
     // top: 0.5em;    
     
+    &.dropped {
+      border-bottom: $default-underline;
+    }
+    
     .adverb-group {           
       .adverb {      
         &.dropped {
@@ -108,6 +112,12 @@ body {
     top: 4.0em;
     width: 100%;
     border: solid 1px #f30000;
+    
+    .adverb {
+      &.dropped {
+        border-bottom: $default-underline;
+      }
+    }
   }
   
 }
@@ -134,12 +144,10 @@ body {
     border: solid 2px #00f300;
   }
   
-  &.dropped {
-    // border: solid 2px #3333f3;
-    
-    &.adjective {
-      border-bottom: $default-underline;
-    }
+  &.dropped {    
+    // &.adjective, &.adverb {
+      // border-bottom: $default-underline;
+    // }
   }  
 }
 
