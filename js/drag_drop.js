@@ -228,7 +228,7 @@ igble.proj = {
 		// console.log("adding stuff to token bank");
 		var $tokenBank = $('#token-bank');
 		$(tokens).each(function(key, value) {
-			$tokenBank.append("<span class='draggable-token token " + value.pos + "'>" + value.text + "</span>");	
+			$tokenBank.append("<span class='draggable-token token " + value.pos + "' data-role='" + value.role + "'>" + value.text + "</span>");	
 		});
 		
 	}
