@@ -137,7 +137,9 @@ igble.proj = {
  	 * ------------------------------------------------------------------------------------------
 	 */
 	dropSucceeds: function(draggable, droppable) {
-		return $(draggable).data('role') === $(droppable).data('role'); 
+		if($(draggable).data('role') && $(droppable).data('role')) {
+			return $(draggable).data('role') === $(droppable).data('role');
+		} 
 	},
 	
 	splitIntoDraggables: function(string) {
