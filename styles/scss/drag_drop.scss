@@ -156,6 +156,10 @@ body {
     // &.adjective, &.adverb {
       // border-bottom: $default-underline;
     // }
+  }
+  
+  &.correct {
+    background-color: #66FF66;
   }  
 }
 
