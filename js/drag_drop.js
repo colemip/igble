@@ -232,9 +232,6 @@ igble.proj = {
 		});
 		
 	}
-},
-
-assessment : {	
 }
 
 };
