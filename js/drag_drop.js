@@ -13,28 +13,40 @@ igble.proj = {
 		// igble.proj.dragDrop.splitIntoDraggables("This is a sentence");
 		
 		// setup token bank
-		var tokenBank = [
-			{
-				text: 'The',
-				pos: 'adj',
-				role: 'adj'
+		var tokenBank = {
+			immediate: {
+				tokens:	
+				[
+					{
+						text: 'The',
+						pos: 'adj',
+						role: 'adj'
+					},
+					{
+						text: 'brown',
+						pos: 'adj',
+						role: 'adj'
+					},
+					{
+						text: 'fox',
+						pos: 'noun',
+						role: 'subject'
+					},
+					{
+						text: 'runs',
+						pos: 'verb',
+						role: 'verb'
+					}
+				]
 			},
-			{
-				text: 'brown',
-				pos: 'adj',
-				role: 'adj'
-			},
-			{
-				text: 'fox',
-				pos: 'noun',
-				role: 'subject'
-			},
-			{
-				text: 'runs',
-				pos: 'verb',
-				role: 'verb'
+			
+			delayed: {
+				tokens: [
+					{}
+				]
 			}
-		];		
+		
+		};		
 		igble.proj.dragDrop.addToTokenBank(tokenBank);
 		
 		// setup draggables
