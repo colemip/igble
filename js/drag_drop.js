@@ -108,7 +108,6 @@ igble.proj = {
 	},
 	
 	_onDropAdverb: function(element) {
-		console.log('adverb dropped!');
 		$(element).parent('.adverb-group').append("<span class='droppable-token adverb' data-pos='adv'></span>");
 		$(element).append("<span class='droppable-token adverb' data-pos='adv'></span>");
 		// $(element).find('.adverb-group').append("<div class='droppable-token adverb'></div>");
@@ -119,7 +118,8 @@ igble.proj = {
 	
 	
 	_onDropVerb: function(element) {
-		
+		$(element).append($("<div class='adverb-group'></div>").append("<span class='droppable-token adverb' data-pos='adv'></span>"));
+		igble.proj.dragDrop.makeDroppable($(element).find('.droppable-token.adverb'));
 	},
 	
 	splitIntoDraggables: function(string) {
