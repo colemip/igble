@@ -68,6 +68,10 @@ igble.proj = {
 				$(this).addClass('dropped');				
 				igble.proj.dragDrop.onDrop($(this), ui.draggable);
 				$(ui.draggable).hide();
+				// check if token is placed correctly
+				if(igble.proj.dragDrop.dropSucceeds($(this), ui.draggable)) {
+					console.log("success!");
+				}
 			},
 			hoverClass: 'hover',
 			tolerance: 'intersect'
@@ -81,8 +85,6 @@ igble.proj = {
 		console.log("dropped!");
 		switch($(draggable).data('pos')) {
 			case 'noun':
-				if($(draggable).data('role') === $(droppable).data('role'))
-					console.log("SUCCESS!");
 				break;
 			case 'adj':				
 				igble.proj.dragDrop._onDropAdj(draggable);
@@ -123,6 +125,19 @@ igble.proj = {
 		console.log('onDrop() verb');
 		$(element).append($("<div class='adverb-group'></div>").append("<span class='droppable-token adverb' data-pos='adv'></span>"));
 		igble.proj.dragDrop.makeDroppable($(element).find('.droppable-token.adverb'));
+	},
+	
+	/**
+	 * ------------------------------------------------------------------------------------------ 
+	 * Determines if draggable was correctly placed on droppable
+	 * 
+ 	 * @param {Object} draggable
+ 	 * @param {Object} droppable
+ 	 * @return boolean
+ 	 * ------------------------------------------------------------------------------------------
+	 */
+	dropSucceeds: function(draggable, droppable) {
+		return $(draggable).data('role') === $(droppable).data('role'); 
 	},
 	
 	splitIntoDraggables: function(string) {
