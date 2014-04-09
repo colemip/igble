@@ -11,6 +11,28 @@ igble.proj = {
 	
 	init: function() {
 		// igble.proj.dragDrop.splitIntoDraggables("This is a sentence");
+		
+		var tokenBank = [
+			{
+				text: 'The',
+				pos: 'adj'
+			},
+			{
+				text: 'brown',
+				pos: 'adj'
+			},
+			{
+				text: 'fox',
+				pos: 'noun',
+				role: 'subject'
+			},
+			{
+				text: 'runs',
+				pos: 'verb',
+				role: 'verb'
+			}
+		];
+		
 		$('.draggable').draggable({
 			revert: 'invalid'
 		});
