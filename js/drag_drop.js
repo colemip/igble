@@ -90,6 +90,9 @@ igble.proj = {
 			case 'adv':
 				igble.proj.dragDrop._onDropAdverb(draggable);
 				break;
+			case 'verb':
+				igble.proj.dragDrop._onDropVerb(draggable);
+				break;
 			default:
 				break;
 		}	
@@ -107,13 +110,17 @@ igble.proj = {
 	_onDropAdverb: function(element) {
 		console.log('adverb dropped!');
 		$(element).parent('.adverb-group').append("<span class='droppable-token adverb' data-pos='adv'></span>");
-		$(element).append("<div class='adverb-group'></div>");
-		$(element).find('.adverb-group').append("<div class='droppable-token adverb'></div>");
+		$(element).append("<span class='droppable-token adverb' data-pos='adv'></span>");
+		// $(element).find('.adverb-group').append("<div class='droppable-token adverb'></div>");
 		igble.proj.dragDrop.makeDroppable($(element).find('.adverb'));									
 		$(element).css('top', '-2.0em');
 		$(element).rotate({angle: 30, center: ["0%", "0%"]});
 	},
 	
+	
+	_onDropVerb: function(element) {
+		
+	},
 	
 	splitIntoDraggables: function(string) {
 		var words = string.split(' ');
