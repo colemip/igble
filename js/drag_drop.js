@@ -106,6 +106,12 @@ igble.proj = {
 	
 	_onDropAdverb: function(element) {
 		console.log('adverb dropped!');
+		$(element).parent('.adverb-group').append("<span class='droppable-token adverb' data-pos='adv'></span>");
+		$(element).append("<div class='adverb-group'></div>");
+		$(element).find('.adverb-group').append("<div class='droppable-token adverb dropped'></div>");
+		igble.proj.dragDrop.makeDroppable($(element).find('.adverb.dropped'));									
+		$(element).css('top', '-2.0em');
+		$(element).rotate({angle: 30, center: ["0%", "0%"]});
 	},
 	
 	
