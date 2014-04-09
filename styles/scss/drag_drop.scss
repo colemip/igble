@@ -160,7 +160,11 @@ body {
   
   &.correct {
     background-color: #66FF66;
-  }  
+  } 
+  
+  &.incorrect {
+    background-color: #CC0000;
+  } 
 }
 
 .draggable-token {

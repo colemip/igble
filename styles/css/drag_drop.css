@@ -121,6 +121,9 @@ body {
 .droppable-token.correct {
   background-color: #66FF66;
 }
+.droppable-token.incorrect {
+  background-color: #CC0000;
+}
 
 .draggable-token {
   border: solid 2px #AAAAAA;
