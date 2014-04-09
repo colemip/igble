@@ -12,6 +12,7 @@ igble.proj = {
 	init: function() {
 		// igble.proj.dragDrop.splitIntoDraggables("This is a sentence");
 		
+		// setup token bank
 		var tokenBank = [
 			{
 				text: 'The',
@@ -31,17 +32,22 @@ igble.proj = {
 				pos: 'verb',
 				role: 'verb'
 			}
-		];
+		];		
+		igble.proj.dragDrop.addToTokenBank(tokenBank);
 		
+		// setup draggables
 		$('.draggable').draggable({
 			revert: 'invalid'
 		});
+		
+		// setup droppables
 		$('.droppable').droppable({
 			accept: '.draggable', 
 			activate: 
 				function(event, ui) {},
 						
 		});
+		// make stage droppable -- necessary?
 		$('#diagram-stage').droppable({});
 		
 		
@@ -209,6 +215,22 @@ igble.proj = {
 		};
 
 		observer.observe(target, observerConfig);
+	},
+	
+	/**
+	 * ------------------------------------------------------------------------------------------
+	 * Takes array of token objects and populate token bank
+	 * 
+	 * @param tokenBank
+	 * ------------------------------------------------------------------------------------------ 
+	 */
+	addToTokenBank: function(tokens) {
+		// console.log("adding stuff to token bank");
+		var $tokenBank = $('#token-bank');
+		$(tokens).each(function(key, value) {
+			$tokenBank.append("<span class='draggable-token token " + value.pos + "'>" + value.text + "</span>");	
+		});
+		
 	}
 },
 
