@@ -116,6 +116,15 @@ body {
       &.dropped {
         border-bottom: $default-underline;
       }
+      .adverb {
+        border-bottom: $default-underline;
+        border-left: $default-underline;
+        height: 1.0em;
+        width: 90%;
+        padding-top: 1.5em;
+        padding-bottom: 0.1em;
+        padding-left: 0.5em;
+      }
     }
   }
   
