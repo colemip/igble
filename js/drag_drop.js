@@ -70,7 +70,8 @@ igble.proj = {
 				$(ui.draggable).hide();
 				// check if token is placed correctly
 				if(igble.proj.dragDrop.dropSucceeds($(this), ui.draggable)) {
-					console.log("success!");
+					// console.log("success!");
+					$(this).css('background-color', '#66FF66');
 				}
 			},
 			hoverClass: 'hover',
