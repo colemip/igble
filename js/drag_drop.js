@@ -16,11 +16,13 @@ igble.proj = {
 		var tokenBank = [
 			{
 				text: 'The',
-				pos: 'adj'
+				pos: 'adj',
+				role: 'adj'
 			},
 			{
 				text: 'brown',
-				pos: 'adj'
+				pos: 'adj',
+				role: 'adj'
 			},
 			{
 				text: 'fox',
@@ -132,7 +134,7 @@ igble.proj = {
 	
 	_onDropAdj: function(element) {
 		console.log('onDrop() adj');
-		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adj'></span>");
+		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adj' data-role='adj'></span>");
 		$(element).append("<div class='adverb-group'></div>");
 		$(element).find('.adverb-group').append("<div class='droppable-token adverb'></div>");
 		igble.proj.dragDrop.makeDroppable($(element).find('.adverb'));									
