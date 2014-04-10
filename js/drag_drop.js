@@ -47,7 +47,7 @@ igble.proj = {
 			}
 		
 		};		
-		igble.proj.dragDrop.addToTokenBank(tokenBank);
+		igble.proj.dragDrop.addToTokenBank(tokenBank.immediate.tokens);
 		
 		// setup draggables
 		$('.draggable').draggable({
@@ -126,7 +126,8 @@ igble.proj = {
 	},
 	
 	onDrop: function(draggable, droppable) {
-		console.log("dropped!");
+		// console.log("dropped!");
+		igble.proj.dragDrop.makeDraggable(droppable);
 		switch($(draggable).data('pos')) {
 			case 'noun':
 				break;
