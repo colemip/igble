@@ -4,11 +4,7 @@ if(!window.igble.proj.dragDrop) { window.igble.proj.dragDrop = {}; }
 
 igble.proj = {	
 	dragDrop : {
-	// attributes
-	nounGroupCount: 1,
-	
-	
-	
+			
 	init: function() {
 		// igble.proj.dragDrop.splitIntoDraggables("This is a sentence");
 		
@@ -19,13 +15,13 @@ igble.proj = {
 				[
 					{
 						text: 'The',
-						pos: 'adj',
-						role: 'adj'
+						pos: 'adjective',
+						role: 'adjective'
 					},
 					{
 						text: 'brown',
-						pos: 'adj',
-						role: 'adj'
+						pos: 'adjective',
+						role: 'adjective'
 					},
 					{
 						text: 'fox',
@@ -126,14 +122,18 @@ igble.proj = {
 	},
 	
 	onDrop: function(draggable, droppable) {
+		console.log("onDrop");
+		console.log(draggable);
+		console.log('draggable pos ' + $(draggable).data('pos'));
+		console.log('droppable pos ' + $(droppable).data('pos'));
 		igble.proj.dragDrop.makeDraggable(droppable);
 		switch($(draggable).data('pos')) {
 			case 'noun':
 				break;
-			case 'adj':				
+			case 'adjective':				
 				igble.proj.dragDrop._onDropAdj(draggable);
 				break;
-			case 'adv':
+			case 'adverb':
 				igble.proj.dragDrop._onDropAdverb(draggable);
 				break;
 			case 'verb':
@@ -146,7 +146,7 @@ igble.proj = {
 	
 	_onDropAdj: function(element) {
 		console.log('onDrop() adj');
-		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adj' data-role='adj'></span>");
+		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adjective' data-role='adjective'></span>");
 		$(element).append("<div class='adverb-group'></div>");
 		$(element).find('.adverb-group').append("<div class='droppable-token adverb'></div>");
 		igble.proj.dragDrop.makeDroppable($(element).find('.adverb'));									
@@ -241,8 +241,9 @@ igble.proj = {
 	addToTokenBank: function(tokens) {
 		// console.log("adding stuff to token bank");
 		var $tokenBank = $('#token-bank');
+		console.log(tokens);
 		$(tokens).each(function(key, value) {
-			$tokenBank.append("<span class='draggable-token token " + value.pos + "' data-role='" + value.role + "'>" + value.text + "</span>");	
+			$tokenBank.append("<span class='draggable-token token " + value.pos + "' data-role='" + value.role + "' data-pos='" + value.pos + "'>" + value.text + "</span>");	
 		});
 		
 	}
