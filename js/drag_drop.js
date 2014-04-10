@@ -108,7 +108,7 @@ igble.proj = {
 			drop: function(event, ui) {
 				$(this).text($(ui.draggable).text());
 				$(this).addClass('dropped');				
-				igble.proj.dragDrop.onDrop($(this), ui.draggable);
+				igble.proj.dragDrop.onDrop(ui.draggable, $(this));
 				$(ui.draggable).hide();
 				// check if token is placed correctly
 				if(igble.proj.dragDrop.dropSucceeds($(this), ui.draggable)) {
@@ -126,7 +126,6 @@ igble.proj = {
 	},
 	
 	onDrop: function(draggable, droppable) {
-		// console.log("dropped!");
 		igble.proj.dragDrop.makeDraggable(droppable);
 		switch($(draggable).data('pos')) {
 			case 'noun':
