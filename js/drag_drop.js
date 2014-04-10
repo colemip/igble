@@ -131,21 +131,29 @@ igble.proj = {
 			case 'noun':
 				break;
 			case 'adjective':				
-				igble.proj.dragDrop._onDropAdj(draggable);
+				igble.proj.dragDrop._onDropAdj(droppable);
 				break;
 			case 'adverb':
-				igble.proj.dragDrop._onDropAdverb(draggable);
+				igble.proj.dragDrop._onDropAdverb(droppable);
 				break;
 			case 'verb':
-				igble.proj.dragDrop._onDropVerb(draggable);
+				igble.proj.dragDrop._onDropVerb(droppable);
 				break;
 			default:
 				break;
 		}	
 	},
 	
+	/**
+	 * ------------------------------------------------------------------------------------------
+	 * Triggers when an adjective is dropped
+	 * 
+	 * @param 
+	 * ------------------------------------------------------------------------------------------
+	 */
 	_onDropAdj: function(element) {
 		console.log('onDrop() adj');
+		console.log(element);
 		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adjective' data-role='adjective'></span>");
 		$(element).append("<div class='adverb-group'></div>");
 		$(element).find('.adverb-group').append("<div class='droppable-token adverb'></div>");
