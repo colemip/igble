@@ -71,6 +71,7 @@ igble.proj = {
 		});
 		
 		igble.proj.dragDrop.makeDroppable($('.droppable-token'));
+		igble.proj.dragDrop.makeTokenBankDroppable();
 		
 		// setup DOM mutation observer
 		// igble.proj.dragDrop._initMutationObserver();
@@ -86,6 +87,34 @@ igble.proj = {
 	 */
 	makeDraggable: function(element) {
 		$(element).draggable();				
+	},
+	
+	
+	
+	makeTokenBankDroppable: function() {
+		console.log($('#token-bank').children());
+		$('#token-bank').children().droppable({
+			accept: '.draggable-token.dropped',
+			activate: function(event, ui) {console.log("activating droppable token bank token");},
+			deactivate: function(event, ui) {console.log("deactivating droppable token bank token");},
+			drop: function(event, ui) {
+				console.log("returning to token bank");
+				$(this).text($(ui.draggable).text());
+				// $(this).addClass('dropped');				
+				igble.proj.dragDrop.onDrop(ui.draggable, $(this));
+				$(ui.draggable).hide();
+				// check if token is placed correctly
+				// if(igble.proj.dragDrop.dropSucceeds($(this), ui.draggable)) {
+					// $(this).addClass('correct');
+				// } else {
+					// $(this).addClass('incorrect');
+				// }
+			},
+			hoverClass: 'hover',
+			tolerance: 'intersect'
+		});
+		
+		$('#token-bank').children().addClass('droppable-token');
 	},
 	
 	
@@ -116,6 +145,17 @@ igble.proj = {
 			hoverClass: 'hover',
 			tolerance: 'intersect'
 		});
+	},
+	
+	/**
+	 * --------------------------------------------------------------------------------------
+	 * Make element droppable in token work
+	 * 
+	 * @param element -- element to allow dropping in token bank
+	 * -------------------------------------------------------------------------------------- 
+	 */
+	makeDroppableInTokenBank: function(element) {
+		
 	},
 	
 	onDrag: function(element) {
