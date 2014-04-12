@@ -26,6 +26,12 @@ body {
   @include border-radius(10px);
 }
 
+#score-board {
+  position: absolute; 
+  top: 2.0em;
+  right: 10.0em;
+}
+
 #token-bank {
   margin-bottom: 2.0em;
   height: 4.0em;
