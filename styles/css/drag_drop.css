@@ -9,6 +9,13 @@ body {
   background-color: #f9f9f9;
 }
 
+.rounded {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
 #token-bank {
   margin-bottom: 2.0em;
   height: 4.0em;
@@ -36,10 +43,6 @@ body {
 
 .token {
   border: solid 1px #f9f9f9;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px;
   padding: 0.9em 1.0em 0.5em 1.0em;
   height: 2.0em;
   width: 5.0em;
