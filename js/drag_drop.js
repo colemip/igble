@@ -86,7 +86,8 @@ igble.proj = {
 	 * -------------------------------------------------------------------------------------- 
 	 */
 	makeDraggable: function(element) {
-		$(element).draggable();				
+		$(element).draggable();			
+		$(element).addClass('draggable-token');	
 	},
 	
 	
