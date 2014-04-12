@@ -91,7 +91,13 @@ igble.proj = {
 	},
 	
 	
-	
+	/** 
+	 * --------------------------------------------------------------------------------------
+	 * Sets droppable properties for all words in token bank 
+	 * 
+	 * @param none
+	 * --------------------------------------------------------------------------------------
+	 */
 	makeTokenBankDroppable: function() {
 		console.log($('#token-bank').children());
 		$('#token-bank').children().droppable({
@@ -104,12 +110,6 @@ igble.proj = {
 				// $(this).addClass('dropped');				
 				igble.proj.dragDrop.onDrop(ui.draggable, $(this));
 				$(ui.draggable).hide();
-				// check if token is placed correctly
-				// if(igble.proj.dragDrop.dropSucceeds($(this), ui.draggable)) {
-					// $(this).addClass('correct');
-				// } else {
-					// $(this).addClass('incorrect');
-				// }
 			},
 			hoverClass: 'hover',
 			tolerance: 'intersect'
