@@ -2,9 +2,7 @@ if(!window.igble) { window.igble = {}; }
 if(!window.igble.proj) { window.igble.proj = {}; }
 if(!window.igble.proj.dragDrop) { window.igble.proj.dragDrop = {}; }
 
-igble.proj = {	
-	dragDrop : {
-			
+igble.proj.dragDrop = {					
 	init: function() {
 		// igble.proj.dragDrop.splitIntoDraggables("This is a sentence");
 		
@@ -231,6 +229,8 @@ igble.proj = {
 	 */
 	dropSucceeds: function(draggable, droppable) {
 		if($(draggable).data('role') && $(droppable).data('role')) {
+			// update player score
+			igble.proj.assessment.updatePlayerScore(1);
 			return $(draggable).data('role') === $(droppable).data('role');
 		} 
 	},
@@ -288,7 +288,6 @@ igble.proj = {
 	 * ------------------------------------------------------------------------------------------ 
 	 */
 	addToTokenBank: function(tokens) {
-		// console.log("adding stuff to token bank");
 		var $tokenBank = $('#token-bank');
 		console.log(tokens);
 		$(tokens).each(function(key, value) {
@@ -296,7 +295,7 @@ igble.proj = {
 		});
 		
 	}
-}
+
 
 };
 
