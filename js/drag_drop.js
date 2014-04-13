@@ -27,10 +27,46 @@ igble.proj.dragDrop = {
 						role: 'subject'
 					},
 					{
+						text: 'with',
+						pos: 'prep',
+						role: 'prep'
+					},
+					{
+						text: 'the',
+						pos: 'adjective',
+						role: 'adjective'
+					},
+					{
+						text: 'bushy',
+						pos: 'adjective',
+						role: 'adjective'
+					},
+					{
+						text: 'tail',
+						pos: 'noun',
+						role: 'noun'
+					},
+					{
 						text: 'runs',
 						pos: 'verb',
 						role: 'verb'
-					}
+					},
+					{
+						text: 'up',
+						pos: 'prep',
+						role: 'prep'
+					},
+					{
+						text: 'the',
+						pos: 'adjective',
+						role: 'adjective'
+					},
+					{
+						text: 'hill',
+						pos: 'noun',
+						role: 'noun'
+					},
+					
 				]
 			},
 			
