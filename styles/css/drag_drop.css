@@ -16,6 +16,12 @@ body {
   border-radius: 10px;
 }
 
+#timer {
+  position: absolute;
+  top: 2.0em;
+  left: 10.0em;
+}
+
 #score-board {
   position: absolute;
   top: 2.0em;
