@@ -22,7 +22,7 @@ igble.proj.assessment = {
 		
 		updateTimer: function() {
 			igble.proj.assessment.timer_value++;
-			if(igble.proj.assessment > 10) return;
+			if(igble.proj.assessment.timer_value > 10) return;
 			$('#timer').text(igble.proj.assessment.timer_value);		
 			setTimeout(igble.proj.assessment.updateTimer, 1000);
 			
