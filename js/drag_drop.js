@@ -83,32 +83,37 @@ igble.proj.dragDrop = {
 		igble.proj.dragDrop.addToTokenBank(tokenBank.immediate.tokens);
 		
 		// setup draggables
-		$('.draggable').draggable({
-			revert: 'invalid'
-		});
-		
-		// setup droppables
-		$('.droppable').droppable({
-			accept: '.draggable', 
-			activate: 
-				function(event, ui) {},
-						
-		});
+		// $('.draggable').draggable({
+			// revert: 'invalid'
+		// });
+// 		
+		// // setup droppables
+		// $('.droppable').droppable({
+			// accept: '.draggable', 
+			// activate: 
+				// function(event, ui) {},
+// 						
+		// });
 		// make stage droppable -- necessary?
 		$('#diagram-stage').droppable({});
 		
 		
 		
-		$('.draggable-token').draggable({
-			drag: function(event, ui) {
-				var draggable = $(this).clone();
-				igble.proj.dragDrop.onDrag(draggable);				
-			},
-			revert: 'invalid',			
-		});
+		// $('.draggable-token').draggable({
+			// drag: function(event, ui) {
+				// var draggable = $(this).clone();
+				// igble.proj.dragDrop.onDrag(draggable);				
+			// },
+			// revert: 'invalid',			
+		// });
 		
 		igble.proj.dragDrop.makeDroppable($('.droppable-token'));
-		igble.proj.dragDrop.makeTokenBankDroppable();
+		// igble.proj.dragDrop.makeTokenBankDroppable();
+		$('#token-bank').selectable({
+			selected: function(event, ui) {
+				$(ui.selected).addClass('correct');
+			}
+		});
 		
 		// setup DOM mutation observer
 		// igble.proj.dragDrop._initMutationObserver();

@@ -206,6 +206,14 @@ body {
   background-position: right center;
 }
 
+.ui-selected {
+  border: solid 3px #090909;
+  
+  &.correct {
+    border-color: #00f000;
+  }
+}
+
 @media only screen and (max-width: 800px) {
 
    body { font-size: 0.75em; }
