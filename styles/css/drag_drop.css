@@ -16,7 +16,7 @@ body {
   border-radius: 10px;
 }
 
-#timer {
+#timer-container {
   position: absolute;
   top: 2.0em;
   left: 10.0em;

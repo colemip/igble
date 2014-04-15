@@ -99,21 +99,21 @@ igble.proj.dragDrop = {
 		
 		
 		
-		// $('.draggable-token').draggable({
-			// drag: function(event, ui) {
-				// var draggable = $(this).clone();
-				// igble.proj.dragDrop.onDrag(draggable);				
-			// },
-			// revert: 'invalid',			
-		// });
+		$('.draggable-token').draggable({
+			drag: function(event, ui) {
+				var draggable = $(this).clone();
+				igble.proj.dragDrop.onDrag(draggable);				
+			},
+			revert: 'invalid',			
+		});
 		
 		igble.proj.dragDrop.makeDroppable($('.droppable-token'));
-		// igble.proj.dragDrop.makeTokenBankDroppable();
-		$('#token-bank').selectable({
-			selected: function(event, ui) {
-				$(ui.selected).addClass('correct');
-			}
-		});
+		igble.proj.dragDrop.makeTokenBankDroppable();
+		// $('#token-bank').selectable({
+			// selected: function(event, ui) {
+				// $(ui.selected).addClass('correct');
+			// }
+		// });
 		
 		// setup DOM mutation observer
 		// igble.proj.dragDrop._initMutationObserver();
@@ -353,7 +353,7 @@ igble.proj.dragDrop = {
 	
 	updateInstructions: function() {
 		if(igble.proj.dragDrop.difficulty == 1) {
-			$('#instructions').text('Pick the subject of the sentence.');
+			$('#instructions').text('Please the subject into the diagram.');
 		}
 	}
 
