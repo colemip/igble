@@ -278,6 +278,13 @@ igble.proj.dragDrop = {
 		} 
 	},
 	
+	/**
+	 * Returns true if correct token is clicked 
+	 */
+	correctTokenChoice: function() {
+		
+	},
+	
 	splitIntoDraggables: function(string) {
 		var words = string.split(' ');
 		for(var i=0; i < words.length; i++) {
