@@ -233,7 +233,7 @@ igble.proj.dragDrop = {
 		$(element).append("<div class='adverb-group'></div>");
 		$(element).find('.adverb-group').append("<div class='droppable-token adverb'></div>");
 		igble.proj.dragDrop.makeDroppable($(element).find('.adverb'));									
-		$(element).css('top', '-2.0em');
+		$(element).css('top', '-1.0em');
 		$(element).rotate({angle: 30, center: ["0%", "0%"]});
 	},
 	
@@ -243,7 +243,7 @@ igble.proj.dragDrop = {
 		$(element).append("<span class='droppable-token adverb' data-pos='adv'></span>");
 		// $(element).find('.adverb-group').append("<div class='droppable-token adverb'></div>");
 		igble.proj.dragDrop.makeDroppable($(element).find('.adverb'));									
-		$(element).css('top', '-2.0em');
+		$(element).css('top', '-1.0em');
 		$(element).rotate({angle: 30, center: ["0%", "0%"]});
 	},
 	
