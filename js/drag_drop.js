@@ -2,7 +2,10 @@ if(!window.igble) { window.igble = {}; }
 if(!window.igble.proj) { window.igble.proj = {}; }
 if(!window.igble.proj.dragDrop) { window.igble.proj.dragDrop = {}; }
 
-igble.proj.dragDrop = {					
+igble.proj.dragDrop = {	
+	
+	difficulty: 1,
+					
 	init: function() {
 		// igble.proj.dragDrop.splitIntoDraggables("This is a sentence");
 		
@@ -110,6 +113,8 @@ igble.proj.dragDrop = {
 		// setup DOM mutation observer
 		// igble.proj.dragDrop._initMutationObserver();
 		igble.proj.dragDrop._initAllAdjGroupMutObs();
+		
+		igble.proj.dragDrop.updateInstructions();
 	},
 	
 	/**
@@ -332,6 +337,12 @@ igble.proj.dragDrop = {
 			$tokenBank.append("<span class='draggable-token token rounded " + value.pos + "' data-role='" + value.role + "' data-pos='" + value.pos + "'>" + value.text + "</span>");	
 		});
 		
+	},
+	
+	updateInstructions: function() {
+		if(igble.proj.dragDrop.difficulty == 1) {
+			$('#instructions').text('Pick the subject of the sentence.');
+		}
 	}
 
 
