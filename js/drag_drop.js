@@ -172,8 +172,12 @@ igble.proj.dragDrop = {
 				$(ui.draggable).hide();
 				// check if token is placed correctly
 				if(igble.proj.dragDrop.dropSucceeds($(this), ui.draggable)) {
+					// update player score
+					igble.proj.assessment.updatePlayerScore(1);
 					$(this).addClass('correct');
 				} else {
+					// update player score
+					igble.proj.assessment.updatePlayerScore(-1);
 					$(this).addClass('incorrect');
 				}
 			},
@@ -264,9 +268,7 @@ igble.proj.dragDrop = {
  	 * ------------------------------------------------------------------------------------------
 	 */
 	dropSucceeds: function(draggable, droppable) {
-		if($(draggable).data('role') && $(droppable).data('role')) {
-			// update player score
-			igble.proj.assessment.updatePlayerScore(1);
+		if($(draggable).data('role') && $(droppable).data('role')) {			
 			return $(draggable).data('role') === $(droppable).data('role');
 		} 
 	},
