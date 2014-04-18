@@ -140,7 +140,7 @@ body {
   float: left;
 }
 .droppable-token.hover {
-  border: solid 2px #00f300;
+  border: solid 2px #666666;
 }
 .droppable-token.correct {
   background-color: #66FF66;
