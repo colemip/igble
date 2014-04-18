@@ -8,6 +8,12 @@ igble.proj.assessment = {
 		timer_value: 0,
 		
 		hints: {
+			prompts: {
+				subject: 'Choose the subject and drag it to its appropriate location.',
+				verb: 'Choose the verb and drag it to its appropriate location.',
+				adj: 'Drag the adjectives that modify the subject.',
+				adv: 'Drag the adverbs that modify the verbs, adjectives, and other adverbs.',
+			},				
 			errors: {
 				adj: 'This is an adjective.',
 				noun: 'This is a noun',
