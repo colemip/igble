@@ -7,6 +7,14 @@ igble.proj.assessment = {
 		player_score: 0,
 		timer_value: 0,
 		
+		hints: {
+			errors: {
+				adj: 'This is an adjective.',
+				noun: 'This is a noun',
+				adverb: 'This is an adverb.'
+			}
+		},
+		
 		init: function() {
 			igble.proj.assessment.updateTimer();
 		},
