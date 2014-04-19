@@ -6,6 +6,7 @@ igble.proj.assessment = {
 	
 		player_score: 0,
 		timer_value: 0,
+		difficulty: 'easy', // default difficulty
 		
 		feedback: {			
 			prompts: {
@@ -72,6 +73,18 @@ igble.proj.assessment = {
 			if(igble.proj.assessment.timer_value > 10) return;
 			$('#timer').text(igble.proj.assessment.timer_value);		
 			setTimeout(igble.proj.assessment.updateTimer, 1000);
+			
+		},
+		
+		/**
+		 * ------------------------------------------------------------------------------------------
+		 * Called on incorrect diagram placement
+		 * 
+		 * @param none
+		 * @return none
+		 * ------------------------------------------------------------------------------------------ 
+		 */
+		onIncorrectDrop: function() {
 			
 		}			
 };
