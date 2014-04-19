@@ -17,11 +17,11 @@ igble.proj.assessment = {
 			},		
 			hints: {
 				pos_purpose: {
-					subject: '',
-					noun: '',
-					verb: '',
-					adj: '',
-					adv: ''
+					subject: 'Is this the subject of the sentence? An object?',
+					noun: 'Is this the subject of the sentence? An object?',
+					verb: 'Does this represent an action taken by the subject?',
+					adj: 'What word does this modify?',
+					adv: 'What word does this modify?'
 				}
 			},	
 			errors: {
