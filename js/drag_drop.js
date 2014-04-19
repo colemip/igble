@@ -178,7 +178,8 @@ igble.proj.dragDrop = {
 			deactivate: function(event, ui) {},
 			drop: function(event, ui) {
 				$(this).text($(ui.draggable).text());
-				$(this).addClass('dropped');				
+				$(this).addClass('dropped');		
+				$(ui.draggable).addClass('used');		
 				igble.proj.dragDrop.onDrop(ui.draggable, $(this));
 				// $(ui.draggable).hide();
 				// check if token is placed correctly

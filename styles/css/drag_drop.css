@@ -43,6 +43,10 @@ body {
   margin-right: 2.0em;
   margin-bottom: 2.0em;
 }
+#token-bank .used {
+  border: none;
+  background-image: none;
+}
 
 #diagram-stage {
   position: relative;
