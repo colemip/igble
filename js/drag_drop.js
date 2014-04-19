@@ -104,6 +104,7 @@ igble.proj.dragDrop = {
 				var draggable = $(this).clone();
 				igble.proj.dragDrop.onDrag(draggable);				
 			},
+			helper: 'clone',
 			revert: 'invalid',			
 		});
 		
@@ -179,7 +180,7 @@ igble.proj.dragDrop = {
 				$(this).text($(ui.draggable).text());
 				$(this).addClass('dropped');				
 				igble.proj.dragDrop.onDrop(ui.draggable, $(this));
-				$(ui.draggable).hide();
+				// $(ui.draggable).hide();
 				// check if token is placed correctly
 				if(igble.proj.dragDrop.dropSucceeds($(this), ui.draggable)) {
 					// update player score
