@@ -212,10 +212,6 @@ igble.proj.dragDrop = {
 	},
 	
 	onDrop: function(draggable, droppable) {
-		console.log("onDrop");
-		console.log(draggable);
-		console.log('draggable pos ' + $(draggable).data('pos'));
-		console.log('droppable pos ' + $(droppable).data('pos'));
 		igble.proj.dragDrop.makeDraggable(droppable);
 		switch($(draggable).data('pos')) {
 			case 'noun':
