@@ -189,6 +189,7 @@ igble.proj.dragDrop = {
 					// update player score
 					igble.proj.assessment.updatePlayerScore(-1);
 					$(this).addClass('incorrect');
+					igble.proj.assessment.onIncorrectDrop();
 				}
 			},
 			hoverClass: 'hover',
@@ -282,6 +283,7 @@ igble.proj.dragDrop = {
 			return $(draggable).data('role') === $(droppable).data('role');
 		} 
 	},
+	
 	
 	/**
 	 * Returns true if correct token is clicked 
