@@ -189,7 +189,7 @@ igble.proj.dragDrop = {
 					// update player score
 					igble.proj.assessment.updatePlayerScore(-1);
 					$(this).addClass('incorrect');
-					igble.proj.assessment.onIncorrectDrop();
+					igble.proj.assessment.onIncorrectInput();
 				}
 			},
 			hoverClass: 'hover',

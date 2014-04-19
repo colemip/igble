@@ -84,7 +84,7 @@ igble.proj.assessment = {
 		 * @return none
 		 * ------------------------------------------------------------------------------------------ 
 		 */
-		onIncorrectDrop: function() {
+		onIncorrectInput: function() {
 			switch(igble.proj.assessment.difficulty) {
 				case 'easy':
 					console.log("Bad Drop!");
