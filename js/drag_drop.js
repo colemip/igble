@@ -118,7 +118,7 @@ igble.proj.dragDrop = {
 		// igble.proj.dragDrop._initMutationObserver();
 		igble.proj.dragDrop._initAllAdjGroupMutObs();
 		
-		igble.proj.dragDrop.updateInstructions();
+		// igble.proj.dragDrop.updateInstructions();
 	},
 	
 	/**

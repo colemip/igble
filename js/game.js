@@ -16,13 +16,11 @@ igble.proj.game = {
 	},
 	
 	displayPrompts: function() {
-		alert(igble.proj.assessment.feedback.prompts.subject);
+		this.updateInstructions(igble.proj.assessment.feedback.prompts.subject);
 	},
 	
-	updateInstructions: function() {
-		if(igble.proj.game.difficulty == 1) {
-			$('#instructions').text('Please the subject into the diagram.');
-		}
+	updateInstructions: function(instructions) {
+		$('#instructions').text(instructions);
 	}
 };
 
