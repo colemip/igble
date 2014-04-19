@@ -31,7 +31,7 @@ igble.proj.assessment = {
 		},
 		
 		init: function() {
-			igble.proj.assessment.updateTimer();
+			// igble.proj.assessment.updateTimer();
 		},
 		
 		/**
