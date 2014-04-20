@@ -183,10 +183,7 @@ igble.proj.dragDrop = {
 				if(igble.proj.dragDrop.dropSucceeds($(this), ui.draggable)) {
 					igble.proj.dragDrop.onSuccessfulDrop($(this), ui.draggable);					
 				} else {
-					// update player score
-					igble.proj.assessment.updatePlayerScore(-1);
-					$(this).addClass('incorrect');
-					igble.proj.assessment.onIncorrectInput();
+					igble.proj.dragDrop.onFailDrop($(this), ui.draggable);					
 				}
 			},
 			hoverClass: 'hover',
@@ -254,7 +251,9 @@ igble.proj.dragDrop = {
 	 * --------------------------------------------------------------------------------------
 	 */
 	onFailDrop: function(draggable, droppable) {
-		
+		igble.proj.assessment.updatePlayerScore(-1);
+		$(this).addClass('incorrect');
+		igble.proj.assessment.onIncorrectInput();
 	},
 	
 	/**
