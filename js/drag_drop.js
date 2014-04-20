@@ -235,6 +235,18 @@ igble.proj.dragDrop = {
 	},
 	
 	/**
+	 * --------------------------------------------------------------------------------------
+	 * Triggers when a successful drops occurs 
+	 * 
+	 * @param draggable
+	 * @param droppable
+	 * --------------------------------------------------------------------------------------
+	 */
+	onSuccessfulDrop: function(draggable, droppable) {
+		
+	},
+	
+	/**
 	 * ------------------------------------------------------------------------------------------
 	 * Triggers when an adjective is dropped
 	 * 
