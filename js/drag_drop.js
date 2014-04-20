@@ -179,13 +179,9 @@ igble.proj.dragDrop = {
 				$(this).addClass('dropped');		
 				$(ui.draggable).addClass('used');		
 				igble.proj.dragDrop.onDrop(ui.draggable, $(this));
-				// $(ui.draggable).hide();
 				// check if token is placed correctly
 				if(igble.proj.dragDrop.dropSucceeds($(this), ui.draggable)) {
-					// update player score
-					igble.proj.assessment.updatePlayerScore(1);
-					$(this).addClass('correct');
-					igble.proj.game.play('#audio-success');
+					igble.proj.dragDrop.onSuccessfulDrop($(this), ui.draggable);					
 				} else {
 					// update player score
 					igble.proj.assessment.updatePlayerScore(-1);
@@ -243,7 +239,10 @@ igble.proj.dragDrop = {
 	 * --------------------------------------------------------------------------------------
 	 */
 	onSuccessfulDrop: function(draggable, droppable) {
-		
+		console.log("onSuccessfulDrop");
+		igble.proj.assessment.updatePlayerScore(1);
+		draggable.addClass('correct');
+		igble.proj.game.play('#audio-success');
 	},
 	
 	/**
