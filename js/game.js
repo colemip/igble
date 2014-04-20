@@ -25,8 +25,12 @@ igble.proj.game = {
 	},
 	
 	next: function(pos) {
-		if(pos === 'subject') {
-			this.updateInstructions(igble.proj.assessment.feedback.prompts.verb);		
+		switch(pos) {
+			case 'subject':
+				this.updateInstructions(igble.proj.assessment.feedback.prompts.verb);
+				break;
+			default:
+				break;
 		}
 	},
 	

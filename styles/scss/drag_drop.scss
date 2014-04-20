@@ -40,9 +40,16 @@ body {
 
 #instructions-container {
   width: 50%;
+  height: 3.0em;
   margin: 0 auto;
   text-align: center;
   margin-bottom: 4.0em;
+  padding-top: 1.0em;
+  border: solid 1px #3333f3;
+  
+  span#instructions {
+    font-weight: bold;
+  }  
 }
 
 #token-bank {

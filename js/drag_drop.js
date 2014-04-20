@@ -241,6 +241,7 @@ igble.proj.dragDrop = {
 		igble.proj.assessment.updatePlayerScore(1);
 		draggable.addClass('correct');
 		igble.proj.game.play('#audio-success');
+		igble.proj.game.updateInstructions(igble.proj.assessment.feedback.prompts.verb);
 	},
 	
 	/**

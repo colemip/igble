@@ -98,8 +98,8 @@ igble.proj.assessment = {
 			console.log("highlighting");
 			$(selector).first().effect({
 				effect: 'highlight',
-				duration: 500,
-				color: "#ff0000"
+				duration: 1000
+				// color: "#ff0000"
 			});
 		}		
 };
