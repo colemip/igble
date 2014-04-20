@@ -206,6 +206,7 @@ igble.proj.dragDrop = {
 	},
 	
 	onDrop: function(draggable, droppable) {
+		igble.proj.assessment.highlight('#instructions-container');
 		igble.proj.dragDrop.makeDraggable(droppable);
 		switch($(draggable).data('pos')) {
 			case 'subject':

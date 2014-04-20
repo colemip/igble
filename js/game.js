@@ -21,6 +21,7 @@ igble.proj.game = {
 	
 	updateInstructions: function(instructions) {
 		$('#instructions').text(instructions);
+		igble.proj.assessment.highlight('instructions-container');
 	},
 	
 	next: function(pos) {

@@ -94,11 +94,13 @@ igble.proj.assessment = {
 			}
 		},
 		
-		highlight: function(elementId) {
+		highlight: function(selector) {
 			console.log("highlighting");
-			$(elementId).first().effect({
-				effect: 'highlight'
-			}, 500);
+			$(selector).first().effect({
+				effect: 'highlight',
+				duration: 500,
+				color: "#ff0000"
+			});
 		}		
 };
 
