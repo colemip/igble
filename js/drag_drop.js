@@ -214,6 +214,9 @@ igble.proj.dragDrop = {
 	onDrop: function(draggable, droppable) {
 		igble.proj.dragDrop.makeDraggable(droppable);
 		switch($(draggable).data('pos')) {
+			case 'subject':
+				
+				break;
 			case 'noun':
 				break;
 			case 'adjective':				
@@ -275,6 +278,8 @@ igble.proj.dragDrop = {
  	 * ------------------------------------------------------------------------------------------
 	 */
 	dropSucceeds: function(draggable, droppable) {
+		console.log("drop succeeds");
+		$('body').append('<audio autoplay><source src="audio/effects/162482__kastenfrosch__achievement.mp3"/></audio>');
 		if($(draggable).data('role') && $(droppable).data('role')) {			
 			return $(draggable).data('role') === $(droppable).data('role');
 		} 
