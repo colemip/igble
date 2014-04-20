@@ -92,7 +92,14 @@ igble.proj.assessment = {
 				default:
 					break;
 			}
-		}			
+		},
+		
+		highlight: function(elementId) {
+			console.log("highlighting");
+			$(elementId).first().effect({
+				effect: 'highlight'
+			}, 500);
+		}		
 };
 
 $(document).ready(function() {
