@@ -8,19 +8,42 @@ igble.proj.game = {
 	
 	init: function() {
 		console.log("game loaded");
-		igble.proj.game.start();
+		this.start();
 	},
 	
 	start: function() {
-		igble.proj.game.displayPrompts();
-	},
-	
-	displayPrompts: function() {
 		this.updateInstructions(igble.proj.assessment.feedback.prompts.subject);
 	},
 	
+	// displayPrompt: function() {
+		// this.updateInstructions(igble.proj.assessment.feedback.prompts.subject);
+	// },
+	
 	updateInstructions: function(instructions) {
 		$('#instructions').text(instructions);
+	},
+	
+	next: function(pos) {
+		if(pos === 'subject') {
+			this.updateInstructions(igble.proj.assessment.feedback.prompts.verb);		
+		}
+	},
+	
+	/**
+	 * ------------------------------------------------------------------------------------------ 
+	 * Play audio element with given id 
+	 * 
+ 	 * @param {Object} audioElementId
+ 	 * ------------------------------------------------------------------------------------------
+	 */
+	play: function(audioElementId) {
+		var audio = $(audioElementId).get(0);
+		audio.play();
+		// pause audio after timeout
+		setTimeout(function() {	
+			audio.pause();	
+			audio.currentTime = 0;
+		}, 800);
 	}
 };
 
