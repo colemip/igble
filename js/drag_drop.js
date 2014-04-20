@@ -246,6 +246,18 @@ igble.proj.dragDrop = {
 	},
 	
 	/**
+	 * --------------------------------------------------------------------------------------
+	 * Triggers when an UNsuccessful drops occurs 
+	 * 
+	 * @param draggable
+	 * @param droppable
+	 * --------------------------------------------------------------------------------------
+	 */
+	onFailDrop: function(draggable, droppable) {
+		
+	},
+	
+	/**
 	 * ------------------------------------------------------------------------------------------
 	 * Triggers when an adjective is dropped
 	 * 
