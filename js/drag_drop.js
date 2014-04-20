@@ -185,6 +185,7 @@ igble.proj.dragDrop = {
 					// update player score
 					igble.proj.assessment.updatePlayerScore(1);
 					$(this).addClass('correct');
+					igble.proj.game.play('#audio-success');
 				} else {
 					// update player score
 					igble.proj.assessment.updatePlayerScore(-1);
@@ -278,9 +279,6 @@ igble.proj.dragDrop = {
  	 * ------------------------------------------------------------------------------------------
 	 */
 	dropSucceeds: function(draggable, droppable) {
-		console.log("drop succeeds");
-		// $('body').append('<audio autoplay><source src="audio/effects/162482__kastenfrosch__achievement.mp3"/></audio>');
-		igble.proj.game.play('#audio-success');
 		if($(draggable).data('role') && $(droppable).data('role')) {			
 			return $(draggable).data('role') === $(droppable).data('role');
 		} 
