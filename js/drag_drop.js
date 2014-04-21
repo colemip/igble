@@ -383,6 +383,7 @@ igble.proj.dragDrop = {
 	attachDiffButtonBehavior: function() {
 		$('#difficulty-container').children().each(function() {
 			$(this).on('click', function() {
+				igble.proj.game.difficulty = $(this).data('difficulty');
 				$(this).siblings('.difficulty').removeClass('selected');
 				$(this).addClass('selected');				
 			});
