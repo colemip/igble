@@ -65,6 +65,10 @@ body {
     border: none;
     background-image: none;
   }
+  
+  .selected:not(.used) {
+    border: solid 2px #0606f3;
+  }
 }
 
 #diagram-stage {
@@ -215,11 +219,7 @@ body {
   background-image: url('../../img/icons/drag_arrow.png');
   background-size: auto 50%;
   background-repeat: no-repeat;
-  background-position: right center;
-  
-  &.selected {
-    border: solid 2px #0606f3;
-  }
+  background-position: right center;    
 }
 
 .ui-selected {

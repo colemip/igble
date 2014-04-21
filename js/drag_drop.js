@@ -363,7 +363,16 @@ igble.proj.dragDrop = {
 	addToTokenBank: function(tokens) {
 		var $tokenBank = $('#token-bank');
 		$(tokens).each(function(key, value) {
-			$tokenBank.append("<span class='draggable-token token rounded " + value.pos + "' data-role='" + value.role + "' data-pos='" + value.pos + "'>" + value.text + "</span>");	
+			$tokenBank.append("<span class='draggable-token token rounded " + value.pos + "' data-role='" + value.role + "' data-pos='" + value.pos + "'>" + value.text + "</span>")
+			$tokenBank.children().last().on('click', function() {
+							console.log("token bank token clicked");
+							console.log($(this));
+							
+							if($(this).hasClass('selected'))
+								$(this).removeClass('selected');
+							else
+								$(this).addClass('selected');
+						});	
 		});
 		
 	}
