@@ -20,7 +20,7 @@ igble.proj.assessment = {
 				'medium': {
 					subject: 'Select each word in the subject clause.',
 					verb: 'Select each word in the verb clause.',
-					adj: 'Drag the adjectives that modify the subject.',
+					adj: 'Place the adjectives that modify the subject',
 					adv: 'Drag the adverbs that modify the verbs, adjectives, and other adverbs.',
 					adj_more: 'Are there any more adjectives that modify this noun?'
 				}
@@ -40,6 +40,10 @@ igble.proj.assessment = {
 				adverb: 'This is an adverb.'
 			}
 		},
+		
+		subject_clause: ['The', 'brown', 'fox', 'with', 'the', 'bushy', 'tail'];
+		verb_clause: ['runs', 'swiftly],
+		
 		
 		/* ------------------------------------
 		 model of player's problem areas
@@ -125,6 +129,21 @@ igble.proj.assessment = {
 				effect: 'highlight',
 				duration: 1000
 			});
+		},
+		
+		checkClause: function(clauseType) {
+			// get all selected tokens
+			var isCorrectClause = true; // assume the best
+			var activeClause = igble.proj.assessment[clauseType+'_clause'];
+
+			$('#token-bank .selected').each(function() {
+				if( activeClause.indexOf($(this).text() < 0 ) {
+					isCorrectClause = false;
+					break;
+				}				 
+			});
+			
+			return isCorrectClause;
 		}		
 };
 
