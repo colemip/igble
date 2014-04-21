@@ -153,9 +153,9 @@ igble.proj.dragDrop = {
 				igble.proj.dragDrop.onDrop(ui.draggable, $(this));
 				// check if token is placed correctly
 				if(igble.proj.dragDrop.dropSucceeds($(this), ui.draggable)) {
-					igble.proj.dragDrop.onSuccessfulDrop($(this), ui.draggable);					
+					igble.proj.dragDrop.onSuccessfulDrop(ui.draggable, $(this));					
 				} else {
-					igble.proj.dragDrop.onFailDrop($(this), ui.draggable);					
+					igble.proj.dragDrop.onFailDrop(ui.draggable, $(this));					
 				}
 			},
 			hoverClass: 'hover',
@@ -215,7 +215,7 @@ igble.proj.dragDrop = {
 	onSuccessfulDrop: function(draggable, droppable) {
 		console.log("onSuccessfulDrop");
 		igble.proj.assessment.updatePlayerScore(1);
-		draggable.addClass('correct');
+		droppable.addClass('correct');
 		igble.proj.game.play('#audio-success');
 		igble.proj.game.next(droppable.data('role'), false);
 	},
@@ -230,7 +230,9 @@ igble.proj.dragDrop = {
 	 */
 	onFailDrop: function(draggable, droppable) {
 		igble.proj.assessment.updatePlayerScore(-1);
-		$(this).addClass('incorrect');
+		console.log("adding incorrect class to:");
+		console.log($(this));
+		droppable.addClass('incorrect');
 		igble.proj.assessment.onIncorrectInput();
 	},
 	
