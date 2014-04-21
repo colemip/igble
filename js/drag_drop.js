@@ -77,7 +77,6 @@ igble.proj.dragDrop = {
 		
 		};		
 		igble.proj.dragDrop.addToTokenBank(tokenBank.immediate.tokens);
-		$('#diagram-stage').droppable({});
 		$('.draggable-token').draggable({
 			drag: function(event, ui) {
 				var draggable = $(this).clone();
@@ -113,13 +112,11 @@ igble.proj.dragDrop = {
 	 * --------------------------------------------------------------------------------------
 	 */
 	makeTokenBankDroppable: function() {
-		console.log($('#token-bank').children());
 		$('#token-bank').children().droppable({
 			accept: '.draggable-token.dropped',
-			activate: function(event, ui) {console.log("activating droppable token bank token");},
-			deactivate: function(event, ui) {console.log("deactivating droppable token bank token");},
+			activate: function(event, ui) {},
+			deactivate: function(event, ui) {},
 			drop: function(event, ui) {
-				console.log("returning to token bank");
 				$(this).text($(ui.draggable).text());				
 				igble.proj.dragDrop.onDrop(ui.draggable, $(this));
 				$(ui.draggable).hide();
