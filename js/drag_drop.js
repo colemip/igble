@@ -114,8 +114,8 @@ igble.proj.dragDrop = {
 	makeTokenBankDroppable: function() {
 		$('#token-bank').children().droppable({
 			accept: '.draggable-token.dropped',
-			activate: function(event, ui) {},
-			deactivate: function(event, ui) {},
+			activate: function(event, ui) {console.log("activating droppable token bank token");},
+			deactivate: function(event, ui) {console.log("deactivating droppable token bank token");},
 			drop: function(event, ui) {
 				$(this).text($(ui.draggable).text());				
 				igble.proj.dragDrop.onDrop(ui.draggable, $(this));
@@ -158,18 +158,17 @@ igble.proj.dragDrop = {
 		});
 	},
 	
+	
+	
 	/**
 	 * --------------------------------------------------------------------------------------
-	 * Make element droppable in token work
+	 * Called when element is dragged
 	 * 
-	 * @param element -- element to allow dropping in token bank
-	 * -------------------------------------------------------------------------------------- 
+	 * @param draggable element
+	 * @return void
+	 * --------------------------------------------------------------------------------------
 	 */
-	makeDroppableInTokenBank: function(element) {
-		
-	},
-	
-	onDrag: function(element) {
+	onDrag: function(draggable) {
 	},
 	
 	onDrop: function(draggable, droppable) {
@@ -204,7 +203,6 @@ igble.proj.dragDrop = {
 	 * --------------------------------------------------------------------------------------
 	 */
 	onSuccessfulDrop: function(draggable, droppable) {
-		console.log("onSuccessfulDrop");
 		igble.proj.assessment.updatePlayerScore(1);
 		draggable.addClass('correct');
 		igble.proj.game.play('#audio-success');
@@ -233,8 +231,6 @@ igble.proj.dragDrop = {
 	 * ------------------------------------------------------------------------------------------
 	 */
 	_onDropAdj: function(element) {
-		console.log('onDrop() adj');
-		console.log(element);
 		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adjective' data-role='adjective'></span>");
 		$(element).append("<div class='adverb-group'></div>");
 		$(element).find('.adverb-group').append("<div class='droppable-token adverb'></div>");
@@ -244,10 +240,8 @@ igble.proj.dragDrop = {
 	},
 	
 	_onDropAdverb: function(element) {
-		console.log('onDrop() adv');
 		$(element).parent('.adverb-group').append("<span class='droppable-token adverb' data-pos='adv'></span>");
 		$(element).append("<span class='droppable-token adverb' data-pos='adv'></span>");
-		// $(element).find('.adverb-group').append("<div class='droppable-token adverb'></div>");
 		igble.proj.dragDrop.makeDroppable($(element).find('.adverb'));									
 		$(element).css('top', '-1.0em');
 		$(element).rotate({angle: 30, center: ["0%", "0%"]});
@@ -255,7 +249,6 @@ igble.proj.dragDrop = {
 	
 	
 	_onDropVerb: function(element) {
-		console.log('onDrop() verb');
 		$(element).append($("<div class='adverb-group'></div>").append("<span class='droppable-token adverb' data-pos='adv'></span>"));
 		igble.proj.dragDrop.makeDroppable($(element).find('.droppable-token.adverb'));
 	},
@@ -342,7 +335,6 @@ igble.proj.dragDrop = {
 	 */
 	addToTokenBank: function(tokens) {
 		var $tokenBank = $('#token-bank');
-		console.log(tokens);
 		$(tokens).each(function(key, value) {
 			$tokenBank.append("<span class='draggable-token token rounded " + value.pos + "' data-role='" + value.role + "' data-pos='" + value.pos + "'>" + value.text + "</span>");	
 		});
