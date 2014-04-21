@@ -101,7 +101,7 @@ body {
 .noun-group .adjective.dropped {
   border-bottom: solid 2px #090909;
 }
-.noun-group .adjective .adverb-group .adverb.dropped {
+.noun-group .adjective .verb-mod-group .adverb.dropped {
   border-bottom: solid 2px #090909;
   border-left: solid 2px #090909;
   height: 1.0em;
@@ -117,15 +117,15 @@ body {
   position: absolute;
   left: 52%;
 }
-.verb-group .adverb-group {
+.verb-group .verb-mod-group {
   position: absolute;
   top: 4.0em;
   width: 100%;
 }
-.verb-group .adverb-group .adverb.dropped {
+.verb-group .verb-mod-group .adverb.dropped {
   border-bottom: solid 2px #090909;
 }
-.verb-group .adverb-group .adverb .adverb {
+.verb-group .verb-mod-group .adverb .adverb {
   border-bottom: solid 2px #090909;
   border-left: solid 2px #090909;
   height: 1.0em;
