@@ -254,7 +254,7 @@ igble.proj.dragDrop = {
 	
 	_onDropAdverb: function(element) {
 		console.log("_onDropAdverb");
-		$(element).parent('.adverb-group').append("<span class='droppable-token adverb' data-pos='adv'></span>");
+		$(element).parent('.adverb-group').append("<span class='droppable-token adverb' data-pos='adv' data-role=" + $(element).data('role') + "></span>");			
 		$(element).append("<span class='droppable-token adverb' data-pos='adv'></span>");
 		igble.proj.dragDrop.makeDroppable($(element).find('.adverb'));									
 		$(element).css('top', '-1.0em');
