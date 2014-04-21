@@ -29,6 +29,8 @@ igble.proj.game = {
 			case 'subject':
 				this.updateInstructions(igble.proj.assessment.feedback.prompts.verb);
 				break;
+			case 'verb':
+				this.updateInstructions(igble.proj.assessment.feedback.prompts.adj);
 			default:
 				break;
 		}
