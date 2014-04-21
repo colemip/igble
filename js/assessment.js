@@ -10,11 +10,20 @@ igble.proj.assessment = {
 		
 		feedback: {			
 			prompts: {
-				subject: 'Choose the subject and drag it to its appropriate location.',
-				verb: 'Choose the verb and drag it to its appropriate location.',
-				adj: 'Drag the adjectives that modify the subject.',
-				adv: 'Drag the adverbs that modify the verbs, adjectives, and other adverbs.',
-				adj_more: 'Are there any more adjectives that modify this noun?'
+				'easy': {
+					subject: 'Choose the subject and drag it to its appropriate location.',
+					verb: 'Choose the verb and drag it to its appropriate location.',
+					adj: 'Drag the adjectives that modify the subject.',
+					adv: 'Drag the adverbs that modify the verbs, adjectives, and other adverbs.',
+					adj_more: 'Are there any more adjectives that modify this noun?'
+				},
+				'medium': {
+					subject: 'Select each word in the subject clause.',
+					verb: 'Select each word in the verb clause.',
+					adj: 'Drag the adjectives that modify the subject.',
+					adv: 'Drag the adverbs that modify the verbs, adjectives, and other adverbs.',
+					adj_more: 'Are there any more adjectives that modify this noun?'
+				}
 			},		
 			hints: {
 				pos_purpose: {

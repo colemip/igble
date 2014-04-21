@@ -12,7 +12,7 @@ igble.proj.game = {
 	},
 	
 	start: function() {
-		this.updateInstructions(igble.proj.assessment.feedback.prompts.subject);
+		this.updateInstructions(igble.proj.assessment.feedback.prompts[this.difficulty].subject);
 	},
 	
 	updateInstructions: function(instructions) {
@@ -23,17 +23,17 @@ igble.proj.game = {
 	next: function(role, isFinalForRole) {
 		switch(role) {
 			case 'subject':
-				this.updateInstructions(igble.proj.assessment.feedback.prompts.verb);
+				this.updateInstructions(igble.proj.assessment.feedback.prompts[this.difficulty].verb);
 				break;
 			case 'verb':
-				this.updateInstructions(igble.proj.assessment.feedback.prompts.adj);
+				this.updateInstructions(igble.proj.assessment.feedback.prompts[this.difficulty].adj);
 			case 'adj':
-				this.updateInstructions(igble.proj.assessment.feedback.prompts.adj);
+				this.updateInstructions(igble.proj.assessment.feedback.prompts[this.difficulty].adj);
 			case 'subject-adj':
 				if(isFinalForRole)
-					this.updateInstructions(igble.proj.assessment.feedback.prompts.adv);
+					this.updateInstructions(igble.proj.assessment.feedback.prompts[this.difficulty].adv);
 				else
-					this.updateInstructions(igble.proj.assessment.feedback.prompts.adj_more);
+					this.updateInstructions(igble.proj.assessment.feedback.prompts[this.difficulty].adj_more);
 				break;
 			default:
 				break;
