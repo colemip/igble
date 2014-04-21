@@ -213,6 +213,7 @@ igble.proj.dragDrop = {
 	 * --------------------------------------------------------------------------------------
 	 */
 	onSuccessfulDrop: function(draggable, droppable) {
+		console.log("onSuccessfulDrop");
 		igble.proj.assessment.updatePlayerScore(1);
 		draggable.addClass('correct');
 		igble.proj.game.play('#audio-success');
@@ -239,6 +240,7 @@ igble.proj.dragDrop = {
 	 * ------------------------------------------------------------------------------------------
 	 */
 	_onDropAdj: function(element) {
+		console.log("_onDropAdj");
 		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adjective' data-role='adjective'></span>");
 		$(element).append("<div class='adverb-group'></div>");
 		$(element).find('.adverb-group').append("<div class='droppable-token adverb'></div>");
@@ -248,6 +250,7 @@ igble.proj.dragDrop = {
 	},
 	
 	_onDropAdverb: function(element) {
+		console.log("_onDropAdverb");
 		$(element).parent('.adverb-group').append("<span class='droppable-token adverb' data-pos='adv'></span>");
 		$(element).append("<span class='droppable-token adverb' data-pos='adv'></span>");
 		igble.proj.dragDrop.makeDroppable($(element).find('.adverb'));									
@@ -257,6 +260,7 @@ igble.proj.dragDrop = {
 	
 	
 	_onDropVerb: function(element) {
+		console.log("_onDropVerb");
 		$(element).append($("<div class='verb-mod-group'></div>").append("<span class='droppable-token adverb' data-pos='adv'></span>"));
 		igble.proj.dragDrop.makeDroppable($(element).find('.droppable-token.adverb'));
 	},
