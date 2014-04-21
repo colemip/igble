@@ -101,6 +101,10 @@ igble.proj.assessment = {
 				case 'easy':
 					console.log("Bad Drop!");
 					break;
+				case 'medium':
+					break;
+				case 'hard':
+					break;
 				default:
 					break;
 			}

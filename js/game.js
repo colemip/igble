@@ -4,7 +4,7 @@ if(!window.igble.proj.dragDrop) { window.igble.proj.dragDrop = {}; }
 
 igble.proj.game = {
 	
-	difficulty: 1,
+	difficulty: 'easy',
 	
 	init: function() {
 		console.log("game loaded");
