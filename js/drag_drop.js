@@ -4,9 +4,7 @@ if(!window.igble.proj.dragDrop) { window.igble.proj.dragDrop = {}; }
 
 igble.proj.dragDrop = {	
 						
-	init: function() {
-		// igble.proj.dragDrop.splitIntoDraggables("This is a sentence");
-		
+	init: function() {		
 		// setup token bank
 		var tokenBank = {
 			immediate: {
@@ -79,24 +77,7 @@ igble.proj.dragDrop = {
 		
 		};		
 		igble.proj.dragDrop.addToTokenBank(tokenBank.immediate.tokens);
-		
-		// setup draggables
-		// $('.draggable').draggable({
-			// revert: 'invalid'
-		// });
-// 		
-		// // setup droppables
-		// $('.droppable').droppable({
-			// accept: '.draggable', 
-			// activate: 
-				// function(event, ui) {},
-// 						
-		// });
-		// make stage droppable -- necessary?
 		$('#diagram-stage').droppable({});
-		
-		
-		
 		$('.draggable-token').draggable({
 			drag: function(event, ui) {
 				var draggable = $(this).clone();
@@ -108,17 +89,7 @@ igble.proj.dragDrop = {
 		
 		igble.proj.dragDrop.makeDroppable($('.droppable-token'));
 		igble.proj.dragDrop.makeTokenBankDroppable();
-		// $('#token-bank').selectable({
-			// selected: function(event, ui) {
-				// $(ui.selected).addClass('correct');
-			// }
-		// });
-		
-		// setup DOM mutation observer
-		// igble.proj.dragDrop._initMutationObserver();
 		igble.proj.dragDrop._initAllAdjGroupMutObs();
-		
-		// igble.proj.dragDrop.updateInstructions();
 	},
 	
 	/**
@@ -149,8 +120,7 @@ igble.proj.dragDrop = {
 			deactivate: function(event, ui) {console.log("deactivating droppable token bank token");},
 			drop: function(event, ui) {
 				console.log("returning to token bank");
-				$(this).text($(ui.draggable).text());
-				// $(this).addClass('dropped');				
+				$(this).text($(ui.draggable).text());				
 				igble.proj.dragDrop.onDrop(ui.draggable, $(this));
 				$(ui.draggable).hide();
 			},
@@ -242,7 +212,6 @@ igble.proj.dragDrop = {
 		draggable.addClass('correct');
 		igble.proj.game.play('#audio-success');
 		igble.proj.game.next(droppable.data('role'));
-		// igble.proj.game.updateInstructions(igble.proj.assessment.feedback.prompts.verb);
 	},
 	
 	/**
@@ -311,7 +280,12 @@ igble.proj.dragDrop = {
 	
 	
 	/**
+	 * ------------------------------------------------------------------------------------------
 	 * Returns true if correct token is clicked 
+	 * 
+	 * @param none
+	 * @return boolean
+	 * ------------------------------------------------------------------------------------------
 	 */
 	correctTokenChoice: function() {
 		
@@ -377,10 +351,6 @@ igble.proj.dragDrop = {
 		});
 		
 	}
-	
-	
-
-
 };
 
 $(document).ready(function() {

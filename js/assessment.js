@@ -32,7 +32,7 @@ igble.proj.assessment = {
 		},
 		
 		init: function() {
-			// igble.proj.assessment.updateTimer();
+			console.log("init assessment");
 		},
 		
 		/**
@@ -99,7 +99,6 @@ igble.proj.assessment = {
 			$(selector).first().effect({
 				effect: 'highlight',
 				duration: 1000
-				// color: "#ff0000"
 			});
 		}		
 };

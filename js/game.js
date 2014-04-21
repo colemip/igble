@@ -15,10 +15,6 @@ igble.proj.game = {
 		this.updateInstructions(igble.proj.assessment.feedback.prompts.subject);
 	},
 	
-	// displayPrompt: function() {
-		// this.updateInstructions(igble.proj.assessment.feedback.prompts.subject);
-	// },
-	
 	updateInstructions: function(instructions) {
 		$('#instructions').text(instructions);
 		igble.proj.assessment.highlight('instructions-container');
