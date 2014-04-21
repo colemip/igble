@@ -13,12 +13,12 @@ igble.proj.dragDrop = {
 					{
 						text: 'The',
 						pos: 'adjective',
-						role: 'subject-adj'
+						role: 'subj-mod'
 					},
 					{
 						text: 'brown',
 						pos: 'adjective',
-						role: 'subject-adj'
+						role: 'subj-mod'
 					},
 					{
 						text: 'fox',
@@ -28,22 +28,22 @@ igble.proj.dragDrop = {
 					{
 						text: 'with',
 						pos: 'prep',
-						role: 'prep'
+						role: 'subj-mod'
 					},
 					{
 						text: 'the',
 						pos: 'adjective',
-						role: 'adjective'
+						role: 'noun-mod'
 					},
 					{
 						text: 'bushy',
 						pos: 'adjective',
-						role: 'adjective'
+						role: 'noun-mod'
 					},
 					{
 						text: 'tail',
 						pos: 'noun',
-						role: 'noun'
+						role: 'prep-det-noun'
 					},
 					{
 						text: 'runs',
@@ -53,7 +53,7 @@ igble.proj.dragDrop = {
 					{
 						text: 'swiftly',
 						pos: 'adverb',
-						role: 'verb-adv'
+						role: 'verb-mod'
 					},
 					// {
 						// text: 'up',
@@ -241,10 +241,7 @@ igble.proj.dragDrop = {
 	 */
 	_onDropAdj: function(element) {
 		console.log("_onDropAdj");
-		if($(element).data('role') === 'subject-adj')
-			$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adjective' data-role='subject-adj'></span>");
-		else
-			$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adjective' data-role='adjective'></span>");		
+		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adjective' data-role='subj-mod'></span>");		
 		$(element).append("<div class='adverb-group'></div>");
 		$(element).find('.adverb-group').append("<div class='droppable-token adverb'></div>");
 		igble.proj.dragDrop.makeDroppable($(element).find('.adverb'));									
@@ -256,7 +253,7 @@ igble.proj.dragDrop = {
 		console.log("_onDropAdverb");
 		console.log("adding role " + $(element).data('role'));
 		console.log(element);
-		$(element).parent('.adverb-group').append("<span class='droppable-token adverb' data-pos='adv' data-role=" + $(element).data('role') + "></span>");			
+		$(element).parent('.adverb-group').append("<span class='droppable-token adverb' data-pos='adv' data-role='" + $(element).data('role') + "'></span>");			
 		$(element).append("<span class='droppable-token adverb' data-pos='adv'></span>");
 		igble.proj.dragDrop.makeDroppable($(element).find('.adverb'));									
 		$(element).css('top', '-1.0em');
@@ -266,7 +263,7 @@ igble.proj.dragDrop = {
 	
 	_onDropVerb: function(element) {
 		console.log("_onDropVerb");
-		$(element).append($("<div class='verb-mod-group'></div>").append("<span class='droppable-token adverb' data-pos='adv' data-role='verb-adv'></span>"));
+		$(element).append($("<div class='verb-mod-group'></div>").append("<span class='droppable-token adverb' data-pos='adv' data-role='verb-mod'></span>"));
 		igble.proj.dragDrop.makeDroppable($(element).find('.droppable-token.adverb'));
 	},
 	
