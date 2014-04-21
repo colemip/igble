@@ -171,6 +171,9 @@ body {
   background-repeat: no-repeat;
   background-position: right center;
 }
+.draggable-token.selected {
+  border: solid 2px #0606f3;
+}
 
 .ui-selected {
   border: solid 3px #090909;

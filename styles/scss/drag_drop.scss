@@ -216,6 +216,10 @@ body {
   background-size: auto 50%;
   background-repeat: no-repeat;
   background-position: right center;
+  
+  &.selected {
+    border: solid 2px #0606f3;
+  }
 }
 
 .ui-selected {
