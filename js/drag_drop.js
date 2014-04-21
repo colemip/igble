@@ -241,7 +241,10 @@ igble.proj.dragDrop = {
 	 */
 	_onDropAdj: function(element) {
 		console.log("_onDropAdj");
-		$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adjective' data-role='adjective'></span>");
+		if($(element).data('role') === 'subject-adj')
+			$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adjective' data-role='subject-adj'></span>");
+		else
+			$(element).parent('.adjective-group').append("<span class='droppable-token adjective' data-pos='adjective' data-role='adjective'></span>");		
 		$(element).append("<div class='adverb-group'></div>");
 		$(element).find('.adverb-group').append("<div class='droppable-token adverb'></div>");
 		igble.proj.dragDrop.makeDroppable($(element).find('.adverb'));									
