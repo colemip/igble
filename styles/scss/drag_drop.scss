@@ -32,6 +32,19 @@ body {
   left: 10.0em;
 }
 
+#difficulty-container {
+  position: absolute;
+  width: 20%; 
+  top: 2.0em;  
+  left: 40%;
+  text-align: center;
+  border: solid 1px #f36666;
+  
+  #difficulty {
+    font-weight: bold;
+  }
+}
+
 #score-board {
   position: absolute; 
   top: 2.0em;
