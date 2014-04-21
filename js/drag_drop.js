@@ -94,6 +94,7 @@ igble.proj.dragDrop = {
 		igble.proj.dragDrop.makeDroppable($('.droppable-token'));
 		igble.proj.dragDrop.makeTokenBankDroppable();
 		igble.proj.dragDrop._initAllAdjGroupMutObs();
+		this.attachDiffButtonBehavior();
 	},
 	
 	/**
@@ -377,6 +378,14 @@ igble.proj.dragDrop = {
 						});	
 		});
 		
+	},
+	
+	attachDiffButtonBehavior: function() {
+		$('#difficulty-container').children().each(function() {
+			$(this).on('click', function() {
+				console.log("clicked diff button");
+			});
+		});
 	}
 };
 

@@ -40,8 +40,11 @@ body {
   text-align: center;
   border: solid 1px #FF8C00;
   
-  #difficulty {
-    font-weight: bold;
+  .difficulty {
+    &.selected {
+      font-weight: bold;
+      font-size: 1.5em;
+    }    
   }
 }
 
