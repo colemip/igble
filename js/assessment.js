@@ -14,6 +14,7 @@ igble.proj.assessment = {
 				verb: 'Choose the verb and drag it to its appropriate location.',
 				adj: 'Drag the adjectives that modify the subject.',
 				adv: 'Drag the adverbs that modify the verbs, adjectives, and other adverbs.',
+				adj_more: 'Are there any more adjectives that modify this noun?'
 			},		
 			hints: {
 				pos_purpose: {

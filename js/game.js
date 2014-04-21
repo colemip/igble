@@ -20,13 +20,21 @@ igble.proj.game = {
 		igble.proj.assessment.highlight('instructions-container');
 	},
 	
-	next: function(pos) {
-		switch(pos) {
+	next: function(role, isFinalForRole) {
+		switch(role) {
 			case 'subject':
 				this.updateInstructions(igble.proj.assessment.feedback.prompts.verb);
 				break;
 			case 'verb':
 				this.updateInstructions(igble.proj.assessment.feedback.prompts.adj);
+			case 'adj':
+				this.updateInstructions(igble.proj.assessment.feedback.prompts.adj);
+			case 'subject-adj':
+				if(isFinalForRole)
+					this.updateInstructions(igble.proj.assessment.feedback.prompts.adv);
+				else
+					this.updateInstructions(igble.proj.assessment.feedback.prompts.adj_more);
+				break;
 			default:
 				break;
 		}
@@ -41,6 +49,7 @@ igble.proj.game = {
 	 */
 	play: function(audioElementId) {
 		var audio = $(audioElementId).get(0);
+		audio.volume = 0.3;
 		audio.play();
 		// pause audio after timeout
 		setTimeout(function() {	

@@ -13,12 +13,12 @@ igble.proj.dragDrop = {
 					{
 						text: 'The',
 						pos: 'adjective',
-						role: 'adjective'
+						role: 'subject-adj'
 					},
 					{
 						text: 'brown',
 						pos: 'adjective',
-						role: 'adjective'
+						role: 'subject-adj'
 					},
 					{
 						text: 'fox',
@@ -53,7 +53,7 @@ igble.proj.dragDrop = {
 					{
 						text: 'swiftly',
 						pos: 'adverb',
-						role: 'verb-mod'
+						role: 'verb-adv'
 					},
 					// {
 						// text: 'up',
@@ -216,7 +216,7 @@ igble.proj.dragDrop = {
 		igble.proj.assessment.updatePlayerScore(1);
 		draggable.addClass('correct');
 		igble.proj.game.play('#audio-success');
-		igble.proj.game.next(droppable.data('role'));
+		igble.proj.game.next(droppable.data('role'), false);
 	},
 	
 	/**
