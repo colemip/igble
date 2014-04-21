@@ -32,6 +32,17 @@ igble.proj.assessment = {
 			}
 		},
 		
+		/* ------------------------------------
+		 model of player's problem areas
+		------------------------------------*/
+		player_errors: {
+			subject: 0,
+			noun: 0,
+			verb: 0,
+			adj: 0,
+			adv: 0
+		},
+		
 		init: function() {
 			console.log("init assessment");
 		},
