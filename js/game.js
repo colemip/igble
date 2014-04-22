@@ -60,9 +60,15 @@ igble.proj.game = {
 	
 	updateDifficulty: function(diff) {
 		this.difficulty = diff;
+		
+		if(diff === 'easy') {
+			$('#check-clause').hide();
+		} else if(diff === 'medium') {
+			$('#check-clause').show();
+		}
 	}
 };
 
 $(document).ready(function() {
-	igble.proj.game.init();
+	igble.proj.game.init();	
 });	
