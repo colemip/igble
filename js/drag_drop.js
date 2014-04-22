@@ -235,6 +235,8 @@ igble.proj.dragDrop = {
 		console.log($(this));
 		droppable.addClass('incorrect');
 		igble.proj.assessment.onIncorrectInput();
+		
+		console.log(++igble.proj.student.errors[droppable.data('role')]);
 	},
 	
 	/**
