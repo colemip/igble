@@ -7,6 +7,7 @@ igble.proj.assessment = {
 		player_score: 0,
 		timer_value: 0,
 		difficulty: 'easy', // default difficulty
+		next_task: 'subject',
 		
 		feedback: {			
 			prompts: {
@@ -19,7 +20,7 @@ igble.proj.assessment = {
 				},
 				'medium': {
 					subject: 'Select each word in the subject clause.',
-					verb: 'Select each word in the verb clause.',
+					verb: 'Great! Now select each word in the verb clause.',
 					adj: 'Place the adjectives that modify the subject',
 					adv: 'Drag the adverbs that modify the verbs, adjectives, and other adverbs.',
 					adj_more: 'Are there any more adjectives that modify this noun?'
@@ -165,6 +166,10 @@ igble.proj.assessment = {
 				var isCorrectClause = igble.proj.assessment.checkClause('subject');
 				if(isCorrectClause) {
 					igble.proj.game.updateInstructions("Very good!");
+					if($(this).data('role') === 'subject') {
+						console.log('changing clause to check');
+						igble.proj.game.updateInstructions(igble.proj.assessment.feedback.prompts[igble.proj.assessment.difficulty]['verb']);
+					}
 				} else {
 					igble.proj.game.updateInstructions("Keep trying.");
 					igble.proj.assessment.highlightInstructions();

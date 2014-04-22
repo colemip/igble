@@ -66,6 +66,10 @@ igble.proj.game = {
 		} else if(diff === 'medium') {
 			$('#check-clause').show();
 		}
+		
+		var task = igble.proj.assessment.next_task;
+		// var difficulty = igble.proj.assessment.difficulty;
+		this.updateInstructions(igble.proj.assessment.feedback.prompts[diff][task]);
 	}
 };
 
