@@ -132,6 +132,10 @@ igble.proj.assessment = {
 			});
 		},
 		
+		highlightInstructions: function() {
+			this.highlight('#instructions-container');
+		},
+		
 		checkClause: function(clauseType) {
 			// get all selected tokens
 			var isCorrectClause = true; // assume the best
@@ -159,6 +163,14 @@ igble.proj.assessment = {
 		attachCheckClauseBehavior: function() {
 			$('#check-clause').on('click', function() {
 				var isCorrectClause = igble.proj.assessment.checkClause('subject');
+				if(isCorrectClause) {
+					igble.proj.game.updateInstructions("Very good!");
+				} else {
+					igble.proj.game.updateInstructions("Keep trying.");
+					igble.proj.assessment.highlightInstructions();
+				}
+				
+					
 			});
 		}		
 };
