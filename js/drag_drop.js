@@ -367,15 +367,12 @@ igble.proj.dragDrop = {
 		var $tokenBank = $('#token-bank');
 		$(tokens).each(function(key, value) {
 			$tokenBank.append("<span class='draggable-token token rounded " + value.pos + "' data-role='" + value.role + "' data-pos='" + value.pos + "'>" + value.text + "</span>");
-			$tokenBank.children().last().on('click', function() {
-								
+			$tokenBank.children().last().on('click', function() {								
 				if($(this).hasClass('selected'))
 					$(this).removeClass('selected');
 				else
 					$(this).addClass('selected');
-				});
-				// console.log("checkClause: " + igble.proj.assessment.checkClause('subject'));
-								
+				});								
 		});
 		
 	},
