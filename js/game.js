@@ -23,7 +23,10 @@ igble.proj.game = {
 	next: function(role, isFinalForRole) {
 		switch(role) {
 			case 'subject':
-				this.updateInstructions(igble.proj.assessment.feedback.prompts[this.difficulty].verb);
+				if(igble.proj.student.errors[role] > 0)
+					this.updateInstructions("Hint: the subject is the thing that is running.");
+				else
+					this.updateInstructions(igble.proj.assessment.feedback.prompts[this.difficulty].verb);
 				break;
 			case 'verb':
 				this.updateInstructions(igble.proj.assessment.feedback.prompts[this.difficulty].adj);

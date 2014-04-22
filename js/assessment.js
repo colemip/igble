@@ -114,7 +114,9 @@ igble.proj.assessment = {
 		onIncorrectInput: function() {
 			switch(igble.proj.assessment.difficulty) {
 				case 'easy':
-					console.log("Bad Drop!");
+					// console.log("Bad Drop!");
+					if(igble.proj.assessment.next_task === 'subject')
+						igble.proj.updateInstructions("Hint: the subject is the thing that is running.");
 					break;
 				case 'medium':
 					break;
