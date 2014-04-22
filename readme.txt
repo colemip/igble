@@ -10,3 +10,10 @@ Audio Attribution
 All sound effects were obtained from freesound.org. See audio/effects/_readme_and_license.txt for more information.
 
 
+Libraries
+-------------------------
+Some open-source libraries were used to assist with functionality. These include:
+* jquery
+* jquery-ui
+* jquery-ui touch punch
+* jquery rotate
