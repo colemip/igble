@@ -56,6 +56,10 @@ igble.proj.game = {
 			audio.pause();	
 			audio.currentTime = 0;
 		}, 800);
+	},
+	
+	updateDifficulty: function(diff) {
+		this.difficulty = diff;
 	}
 };
 

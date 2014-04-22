@@ -385,7 +385,8 @@ igble.proj.dragDrop = {
 			$(this).on('click', function() {
 				igble.proj.game.difficulty = $(this).data('difficulty');
 				$(this).siblings('.difficulty').removeClass('selected');
-				$(this).addClass('selected');				
+				$(this).addClass('selected');		
+				igble.proj.game.updateDifficulty($(this).text().toLowerCase());		
 			});
 		});
 	}
