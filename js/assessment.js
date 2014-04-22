@@ -41,8 +41,8 @@ igble.proj.assessment = {
 			}
 		},
 		
-		subject_clause: ['The', 'brown', 'fox', 'with', 'the', 'bushy', 'tail'];
-		verb_clause: ['runs', 'swiftly],
+		subject_clause: ['The', 'brown', 'fox', 'with', 'the', 'bushy', 'tail'],
+		verb_clause: ['runs', 'swiftly'],
 		
 		
 		/* ------------------------------------
@@ -58,6 +58,7 @@ igble.proj.assessment = {
 		
 		init: function() {
 			console.log("init assessment");
+			this.attachCheckClauseBehavior();
 		},
 		
 		/**
@@ -135,15 +136,30 @@ igble.proj.assessment = {
 			// get all selected tokens
 			var isCorrectClause = true; // assume the best
 			var activeClause = igble.proj.assessment[clauseType+'_clause'];
+			console.log(activeClause);
+			console.log($('#token-bank .selected'));
+			var selectedCount = $('#token-bank .selected').length;
+			var activeClauseCount = activeClause.length;
+			
+			if(selectedCount !== activeClauseCount)
+				return false;
 
+			$('#token-bank .selected').length;
 			$('#token-bank .selected').each(function() {
-				if( activeClause.indexOf($(this).text() < 0 ) {
+				console.log($(this).text());
+				if( activeClause.indexOf( $(this).text() ) < 0) {
 					isCorrectClause = false;
-					break;
+					return false;
 				}				 
 			});
-			
+					
 			return isCorrectClause;
+		},
+		
+		attachCheckClauseBehavior: function() {
+			$('#check-clause').on('click', function() {
+				igble.proj.assessment.checkClause('subject');
+			});
 		}		
 };
 
