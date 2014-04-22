@@ -158,7 +158,7 @@ igble.proj.assessment = {
 		
 		attachCheckClauseBehavior: function() {
 			$('#check-clause').on('click', function() {
-				igble.proj.assessment.checkClause('subject');
+				var isCorrectClause = igble.proj.assessment.checkClause('subject');
 			});
 		}		
 };
