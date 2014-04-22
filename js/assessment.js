@@ -16,14 +16,14 @@ igble.proj.assessment = {
 					verb: 'Choose the verb and drag it to its appropriate location.',
 					adj: 'Drag the adjectives that modify the subject.',
 					adv: 'Drag the adverbs that modify the verbs, adjectives, and other adverbs.',
-					adj_more: 'Are there any more adjectives that modify this noun?'
+					adj_more: 'Are there any more adjectives that modify the subject?'
 				},
 				'medium': {
 					subject: 'Select each word in the subject clause.',
 					verb: 'Great! Now select each word in the verb clause.',
 					adj: 'Place the adjectives that modify the subject',
 					adv: 'Drag the adverbs that modify the verbs, adjectives, and other adverbs.',
-					adj_more: 'Are there any more adjectives that modify this noun?'
+					adj_more: 'Are there any more adjectives that modify the subject?'
 				}
 			},		
 			hints: {
@@ -165,7 +165,7 @@ igble.proj.assessment = {
 		
 		attachCheckClauseBehavior: function() {
 			$('#check-clause').on('click', function() {
-				var isCorrectClause = igble.proj.assessment.checkClause('subject');
+				var isCorrectClause = igble.proj.assessment.checkClause(igble.proj.assessment.next_task);
 				if(isCorrectClause) {
 					igble.proj.game.updateInstructions("Very good!");
 					if($(this).data('role') === 'subject') {
